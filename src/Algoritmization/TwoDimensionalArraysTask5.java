@@ -1,4 +1,4 @@
-package Algoritmization.OneDimensionalArrays;
+package Algoritmization;
 
 public class TwoDimensionalArraysTask5
 {

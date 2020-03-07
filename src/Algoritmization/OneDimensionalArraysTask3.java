@@ -1,4 +1,4 @@
-package Algoritmization.OneDimensionalArrays;
+package Algoritmization;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package Algoritmization.OneDimensionalArrays;
+package Algoritmization;
 
 import org.w3c.dom.ls.LSOutput;
 
@@ -118,7 +118,7 @@ public class TwoDimensionalArraysTask9
     }
 
 
-
+    //Test Git
 
 
 

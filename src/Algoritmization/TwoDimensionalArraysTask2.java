@@ -1,6 +1,6 @@
-package Algoritmization.OneDimensionalArrays;
+package Algoritmization;
 
-public class TwoDimensionalArraysTask1
+public class TwoDimensionalArraysTask2
 {
     public static void main(String[] args)
     {
@@ -18,22 +18,17 @@ public class TwoDimensionalArraysTask1
             System.out.println();
         }
 
-        System.out.println();
-        System.out.println("Все не чётные столбцы у которых первый элемент больше последнего :");
-        System.out.println();
+        System.out.println("Элементы квадратной матрицы стоящие по диагонали : ");
 
         for (int i = 0; i < stroki; i++)
         {
             for (int j = 0; j < stolbtsi; j++)
             {
-                 if ((arr[0][i] > arr[stroki-1][i]))
-                 {
-                     if (i % 2 != 0) continue;
-                     System.out.print(arr[j][i] + "\t");
-                 }
+                if (arr[i] == arr[j])
+                System.out.print(arr[i][j]);
             }
-            System.out.println();
         }
+
 
     }
 
@@ -54,7 +49,4 @@ public class TwoDimensionalArraysTask1
         }
         return arr;
     }
-
-
-
 }

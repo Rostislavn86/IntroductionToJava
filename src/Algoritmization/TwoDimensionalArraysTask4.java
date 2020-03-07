@@ -1,10 +1,8 @@
-package Algoritmization.OneDimensionalArrays;
+package Algoritmization;
 
-public class TwoDimensionalArraysTask6
-{
+public class TwoDimensionalArraysTask4 {
     public static void main(String[] args)
     {
-
         int stroki = 10;
         int stolbtsi = 10;
 
@@ -20,44 +18,41 @@ public class TwoDimensionalArraysTask6
             }
             System.out.println();
         }
-
     }
 
     public static int[][] CreateArray(int x, int y)
     {
         int arr[][] = new int[x][y];
 
+        int count = 1;
+
+        //Формируем не чётные строки по условию задачи
         for (int i = 0; i < x; i++)
         {
             for (int j = 0; j < y; j++)
             {
-                arr[i][j] = 1;
+                if (i % 2 != 0) continue;
+                arr[i][j] = count;
+                if (i>=0) {count++;}
             }
-
+            count = 1;
         }
 
-        for (int i = 0; i < arr.length / 2 + 1 ; i++)
-        {
-            for (int j = 0; j < arr[i].length; j++)
-            {
-                if ((j<i) || (j>=(arr[i].length-i)))
-                    arr[i][j]=0;
-                else
-                    arr[i][j]=1;
-            }
-        }
+        count = x;
 
-        for (int i=arr.length-1 ; i>=arr.length/2 ; i--)
+        //Формируем чётные строки по условию задачи
+        for (int i = 0; i < x; i++)
         {
-            for (int j=0 ; j<arr[i].length ; j++)
+            for (int j = 0; j < y; j++)
             {
-                if ((j<(arr[i].length-1-i)) || (j>i))
-                    arr[i][j]=0;
-                else
-                    arr[i][j]=1;}
+                if (i % 2 == 0) continue;
+                arr[i][j] = count;
+                if (i>=0) {count--;}
+            }
+
+            count = x;
         }
 
         return arr;
     }
-
 }
