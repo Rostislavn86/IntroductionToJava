@@ -19,9 +19,7 @@ public class TwoDimensionalArraysTask9
             }
             System.out.println();
         }
-
         WorkMethod(arr);
-
     }
 
     public static int[][] CreateArray(int x, int y)
@@ -57,14 +55,12 @@ public class TwoDimensionalArraysTask9
                 if (j == arr[i].length - 1) maxMass[i] = s;
             }
             System.out.println(s);
-
         }
 
         int maxChislo = findMax(maxMass);;
 
         System.out.println("Максимальную сумму содерит столбец под номером :");
         System.out.println(findIndex(maxMass,maxChislo));
-
     }
 
     public static int findMax(int[] arr) {
@@ -77,22 +73,13 @@ public class TwoDimensionalArraysTask9
         return max;
     }
 
-    public static int findIndex(int[] arr, int maxElem)
-    {
+    public static int findIndex(int[] arr, int maxElem) {
         int count = 0;
-        for (int i = 0; i < arr.length; i++)
-        {
-            if (arr[i] == maxElem)
-            {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == maxElem) {
                 count = i;
             }
         }
         return count;
     }
-
-
-
-
-
-
 }
