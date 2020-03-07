@@ -1,9 +1,5 @@
 package Algoritmization;
 
-import org.w3c.dom.ls.LSOutput;
-
-import java.util.Arrays;
-
 public class TwoDimensionalArraysTask9
 {
     public static void main(String[] args)
@@ -12,6 +8,8 @@ public class TwoDimensionalArraysTask9
         int stolbtsi = 10;
 
         int arr[][] = CreateArray(stroki,stolbtsi);
+
+        System.out.println("Искомая матрица :");
 
         for (int i = 0; i < stroki; i++)
         {
@@ -22,9 +20,7 @@ public class TwoDimensionalArraysTask9
             System.out.println();
         }
 
-        etalonMatrix(arr);
-
-
+        WorkMethod(arr);
 
     }
 
@@ -45,80 +41,57 @@ public class TwoDimensionalArraysTask9
         return arr;
     }
 
-    public static int etalonMatrix(int [][] convertToMatrix) {
+    public static void WorkMethod(int[][] arr) {
 
-        int[] maxMass = new int[convertToMatrix.length];
+        int[] maxMass = new int[arr.length];
 
-        int [][] mas = convertToMatrix;
+        int[][] mas = arr;
         int s = 0;
-        for (int i = 0; i < convertToMatrix[0].length; i++)
+        for (int i = 0; i < arr[0].length; i++)
         {
             s = 0;
-
-            for (int j = 0; j < convertToMatrix.length; j++)
+            System.out.println("Сумма элементов " + i + " столбца");
+            for (int j = 0; j < arr.length; j++)
             {
                 s = s + mas [j][i];
-                if (j == convertToMatrix[i].length - 1) maxMass[i] = s;
-                System.out.println(s + " ");
+                if (j == arr[i].length - 1) maxMass[i] = s;
             }
+            System.out.println(s);
 
-            System.out.println(" ");
         }
 
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        int maxChislo = findMax(maxMass);;
 
-        int countColumn = 0;
+        System.out.println("Максимальную сумму содерит столбец под номером :");
+        System.out.println(findIndex(maxMass,maxChislo));
 
-        for (int i = 0; i < convertToMatrix.length; i++)
-        {
-                System.out.println(i + " " + maxMass[i]);
-        }
-
-
-
-
-//        System.out.println("col" + countColumn);
-//
-        Arrays.sort(maxMass);
-//
-        System.out.println(maxMass[convertToMatrix.length-1]);
-// Доделать !!!
-
-        System.out.println("!!!!!!!!!" + findIndex(maxMass,1 ));
-        findIndex(maxMass,maxMass[convertToMatrix.length-1]);
-
-        return maxMass[convertToMatrix.length-1];
     }
 
-    public static int findIndex(int arr[], int t)
+    public static int findMax(int[] arr) {
+        int max = 0;
+        for (int i = 0; i < arr.length; i++) {
+
+            if (arr[i] > max)
+                max = arr[i];
+        }
+        return max;
+    }
+
+    public static int findIndex(int[] arr, int maxElem)
     {
-
-        // if array is Null
-        if (arr == null) {
-            return -1;
-        }
-
-        // find length of array
-        int len = arr.length;
-        int i = 0;
-
-        // traverse in the array
-        while (i < len) {
-
-            // if the i-th element is t
-            // then return the index
-            if (arr[i] == t) {
-                return i;
-            }
-            else {
-                i = i + 1;
+        int count = 0;
+        for (int i = 0; i < arr.length; i++)
+        {
+            if (arr[i] == maxElem)
+            {
+                count = i;
             }
         }
-        return -1;
+        return count;
     }
 
 
-    //Test Git
+
 
 
 
