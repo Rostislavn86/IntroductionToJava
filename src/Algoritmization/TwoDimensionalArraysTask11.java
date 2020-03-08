@@ -9,54 +9,11 @@ public class TwoDimensionalArraysTask11
 
         int arr[][] = CreateArray(stroki,stolbtsi);
 
-        for (int i = 0; i < stroki; i++)
-        {
-            for (int j = 0; j < stolbtsi; j++)
-            {
-                arr[0][1] = 5;
-                arr[0][2] = 5;
-                arr[0][3] = 5;
-                System.out.print(arr[i][j] + "\t");
-            }
-            System.out.println();
-        }
-
-        System.out.println("*********************************************");
-
-        //int[] countUslovie = new int[stolbtsi];
-
-        int nomerStroki = 0;
-        int countFive = 0;
+        System.out.println("Cтр");
 
         for (int i = 0; i < stroki; i++)
         {
-            for (int j = 0; j < stolbtsi; j++)
-            {
-
-                    for (int k = 0; k < stroki; k++) {
-                        if (arr[k][j] == 5) {
-                            System.out.println("K " + k + "contfive" + countFive);
-                            countFive += 1;
-                          //  System.out.println("nomer stroki " + k + " kolich petiorok " + countFive);
-                            if (countFive >= 3) {
-                                nomerStroki = k;
-                                System.out.println("Номер строки " + nomerStroki);
-                                continue;
-                            }
-                        }
-                    }
-
-
-                    countFive = 0;
-                       // arr[k][j] = 66;
-                //countFive = 0;
-
-            }
-            //System.out.println();
-        }
-
-        for (int i = 0; i < stroki; i++)
-        {
+            System.out.print(i + " | ");
             for (int j = 0; j < stolbtsi; j++)
             {
                 System.out.print(arr[i][j] + "\t");
@@ -64,7 +21,23 @@ public class TwoDimensionalArraysTask11
             System.out.println();
         }
 
-    }
+        System.out.println("***********************************************************************************");
+
+        int[] tempArrray = new int[stroki];
+
+        for (int i = 0; i < stolbtsi; i++)
+        {
+            for (int j = 0; j < stroki; j++)
+            if (arr[j][i] == 5) tempArrray[j] += 5;
+        }
+
+        for (int j = 0; j < stroki; j++)
+        {
+            if (tempArrray[j] / 5 >= 3)
+                System.out.println("Номер строки в которой число 5 встречается 3 и более раза = "+ j);
+        }
+
+        }
 
     public static int[][] CreateArray(int x, int y)
     {
