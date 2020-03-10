@@ -7,7 +7,7 @@ public class TwoDimensionalArraysTask1
         int stroki = 10;
         int stolbtsi = 10;
 
-        int arr[][] = CreateMassiv(stroki,stolbtsi);
+        int arr[][] = createArray(stroki,stolbtsi);
 
         for (int i = 0; i < stroki; i++)
         {
@@ -37,7 +37,7 @@ public class TwoDimensionalArraysTask1
 
     }
 
-    public static int[][] CreateMassiv(int x, int y)
+    public static int[][] createArray(int x, int y)
     {
 
         int a = 0;

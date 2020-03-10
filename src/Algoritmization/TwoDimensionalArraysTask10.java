@@ -7,7 +7,7 @@ public class TwoDimensionalArraysTask10
         int stroki = 10;
         int stolbtsi = 10;
 
-        int arr[][] = CreateArray(stroki,stolbtsi);
+        int arr[][] = createArray(stroki,stolbtsi);
 
         for (int i = 0; i < stroki; i++)
         {
@@ -37,7 +37,7 @@ public class TwoDimensionalArraysTask10
 
     }
 
-    public static int[][] CreateArray(int x, int y)
+    public static int[][] createArray(int x, int y)
     {
         int min = -10; // Минимальное число для диапазона
         int max = 100; // Максимальное число для диапазона

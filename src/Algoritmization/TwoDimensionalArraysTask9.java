@@ -7,7 +7,7 @@ public class TwoDimensionalArraysTask9
         int stroki = 10;
         int stolbtsi = 10;
 
-        int arr[][] = CreateArray(stroki,stolbtsi);
+        int arr[][] = createArray(stroki,stolbtsi);
 
         System.out.println("Искомая матрица :");
 
@@ -22,7 +22,7 @@ public class TwoDimensionalArraysTask9
         WorkMethod(arr);
     }
 
-    public static int[][] CreateArray(int x, int y)
+    public static int[][] createArray(int x, int y)
     {
         int a = 0;
         int b = 10;

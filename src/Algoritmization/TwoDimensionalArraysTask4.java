@@ -6,7 +6,7 @@ public class TwoDimensionalArraysTask4 {
         int stroki = 10;
         int stolbtsi = 10;
 
-        int arr[][] = CreateArray(stroki,stolbtsi);
+        int arr[][] = createArray(stroki,stolbtsi);
 
         System.out.println("Сформированная матрица по заданному образцу :");
 
@@ -20,7 +20,7 @@ public class TwoDimensionalArraysTask4 {
         }
     }
 
-    public static int[][] CreateArray(int x, int y)
+    public static int[][] createArray(int x, int y)
     {
         int arr[][] = new int[x][y];
 

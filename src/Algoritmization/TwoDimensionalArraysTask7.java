@@ -8,7 +8,7 @@ public class TwoDimensionalArraysTask7
         int stroki = 10;
         int stolbtsi = 10;
 
-        double arr[][] = CreateArray(stroki,stolbtsi);
+        double arr[][] = createArray(stroki,stolbtsi);
 
         int countPlus = 0;
 
@@ -24,7 +24,7 @@ public class TwoDimensionalArraysTask7
 
     }
 
-    public static double[][] CreateArray(int x, int y)
+    public static double[][] createArray(int x, int y)
     {
         double arr[][] = new double[x][y];
 

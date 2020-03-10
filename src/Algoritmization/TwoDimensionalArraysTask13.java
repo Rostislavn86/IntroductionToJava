@@ -87,7 +87,7 @@ public class TwoDimensionalArraysTask13
 
                 temp[j] = arr[j][n];
 
-                if (count == 10)
+                if (count == arr.length)
                 {
                     sortbyMin(temp);
                     for (int r = 0; r < stroki; r++)
@@ -108,7 +108,7 @@ public class TwoDimensionalArraysTask13
 
                 temp[j] = arr[j][n];
 
-                if (count == 10)
+                if (count == arr.length)
                 {
                     Arrays.sort(temp);
                     for (int r = 0; r < stroki; r++)
