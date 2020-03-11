@@ -1,76 +1,49 @@
 package Algoritmization;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class TwoDimensionalArraysTask14
 {
     public static void main(String[] args)
     {
-        int a = 1;
-        int b = 11;
+        final int min = 1; // Минимальное число для диапазона
+        final int max = 15; // Максимальное число для диапазона
+        final int rnd = rnd(min, max);
 
-        int stroki =  a + (int) (Math.random() * b);
-        int stolbtsi = a + (int) (Math.random() * b);
+        int stroki = rnd;
+        int stolbtsi = rnd;
 
         int arr[][] = сreateArray(stroki,stolbtsi);
+        int[] temp = new int[arr.length];
+        int[][] tempfinal = new int[arr.length][arr.length];
 
         int count = 0;
 
-        System.out.println("**************Изначальный массив******************");
+        for (int z = 0; z < stroki; z++)
+            сreateArraySortedPlus(stroki,stolbtsi,count,temp,arr,tempfinal,z);
 
-        for (int i = 0; i < stroki; i++)
-        {
-            for (int j = 0; j < stolbtsi; j++)
-            {
-                System.out.print(arr[i][j] + "\t");
-            }
-            System.out.println();
-        }
-
-
-
-        System.out.println();
-
-        System.out.println("**********Отсортированные столбцы матрицы по возростанию **************");
+        System.out.println("*******Случайная матрица m*n состоящая из нулей и единиц в которой число едениц равно номеру столбца*********");
 
         for (int z = 0; z < stroki; z++)
         {
             for (int g = 0; g < stolbtsi; g++)
             {
-                count++;
-                if (count <= stolbtsi)
-                {
-                    for (int r = 0; r < stolbtsi; r++)
-                    {
-                        if (arr[z][g] == 1)
-                        arr[z][g] = 5;
-
-
-                    }
-                }
-                System.out.print(arr[z][g] + "\t");
+                System.out.print(tempfinal[z][g] + "\t");
             }
-            System.out.println(count);
-
-            count = 0;
-
             System.out.println();
-            }
-
-
+        }
 
         }
 
-
-
-
-
-
+    public static int rnd(int min, int max)
+    {
+        max -= min;
+        return (int) (Math.random() * ++max) + min;
+    }
 
     public static int[][] сreateArray(int x, int y)
     {
-        int a = 0;
-        int b = 10;
 
         int arr[][] = new int[x][y];
 
@@ -78,11 +51,49 @@ public class TwoDimensionalArraysTask14
         {
             for (int j = 0; j < y; j++)
             {
-                arr[i][j] = (int) Math.round( Math.random() );
+                arr[i][j] = 0;
             }
         }
         return arr;
     }
 
+    public static void сreateArraySortedPlus(int stroki, int stolbtsi, int count, int[] temp, int[][] arr, int[][] tempfinal, int n)
+    {
+        for (int i = 0; i < stroki; i++)
+        {
+            for (int j = 0; j < stolbtsi; j++)
+            {
+                count++;
 
+                temp[j] = arr[j][n];
+
+                if (count == arr.length)
+                {
+                    sortArrayByCondition(temp,n);
+                    for (int r = 0; r < stroki; r++)
+                        tempfinal[r][n] = temp[r];
+                }
+            }
+            count = 0;
+        }
+    }
+
+    public static void sortArrayByCondition(int[] arr, int count)
+    {
+        for (int i = 0; i < count + 1; i++)
+        {
+            arr[i] = 1;
+        }
+
+        //https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%A4%D0%B8%D1%88%D0%B5%D1%80%D0%B0_%E2%80%94_%D0%99%D0%B5%D1%82%D1%81%D0%B0
+
+        Random rand = new Random();
+        for (int i = arr.length - 1; i > 0; i--)
+        {
+            int index = rand.nextInt(i + 1);
+            int swap = arr[index];
+            arr[index] = arr[i];
+            arr[i] = swap;
+        }
+    }
 }
