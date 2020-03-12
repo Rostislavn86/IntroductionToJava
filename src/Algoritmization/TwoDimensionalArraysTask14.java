@@ -21,7 +21,7 @@ public class TwoDimensionalArraysTask14
         int count = 0;
 
         for (int z = 0; z < stroki; z++)
-            сreateArraySortedPlus(stroki,stolbtsi,count,temp,arr,tempfinal,z);
+            сreateArraySortedByCondition(stroki,stolbtsi,count,temp,arr,tempfinal,z);
 
         System.out.println("*******Случайная матрица m*n состоящая из нулей и единиц в которой число едениц равно номеру столбца*********");
 
@@ -57,7 +57,7 @@ public class TwoDimensionalArraysTask14
         return arr;
     }
 
-    public static void сreateArraySortedPlus(int stroki, int stolbtsi, int count, int[] temp, int[][] arr, int[][] tempfinal, int n)
+    public static void сreateArraySortedByCondition(int stroki, int stolbtsi, int count, int[] temp, int[][] arr, int[][] tempfinal, int n)
     {
         for (int i = 0; i < stroki; i++)
         {
