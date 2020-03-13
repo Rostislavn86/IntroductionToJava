@@ -1,5 +1,7 @@
 package Algoritmization;
 
+import java.util.Random;
+
 public class TwoDimensionalArraysTask16
 {
     public static void main(String[] args)
@@ -8,7 +10,11 @@ public class TwoDimensionalArraysTask16
 
         int size = 3;
 
-        int arr[][] = сreateArray(size, size);
+     //   int arr[][] = сreateArray(size, size);
+        int arr[][] = { { 6, 1, 8 },
+                        { 7, 5, 3  },
+                        { 2, 9 ,4  }
+        };
 
         int count = 0;
 
@@ -113,16 +119,44 @@ public class TwoDimensionalArraysTask16
         return summ;
     }
 
-    public static int[][] сreateArray(int x, int y) {
-
-        int arr[][] = new int[x][y];
+    public static int[][] сreateArray(int x, int y)
+    {
+        System.out.println(x*y);
 
         int count = 1;
 
+        int znachMassiva[] = new int[x*y];
+        for (int i = 0; i < x*y; i++ )
+        {
+            znachMassiva[i] = count++;
+            System.out.println("znach massiva " + znachMassiva[i]);
+        }
+
+        System.out.println(znachMassiva.length);
+
+        //System.out.println(z);
+
+        Random rand = new Random();
+        //for (int i = 9; i > 0; i--)
+        for (int i = 0; i < x*y; i++ )
+        {
+            int index = rand.nextInt(i + 1);
+            int swap = znachMassiva[index];
+            znachMassiva[index] = znachMassiva[i];
+            znachMassiva[i] = swap;
+        }
+
+        for (int i = 0; i < 9; i++)
+        System.out.println("znach Massiva Rand" + znachMassiva[i]);
+
+        int arr[][] = new int[x][y];
+
+        int count2 = 0;
+
         for (int i = 0; i < x; i++) {
             for (int j = 0; j < y; j++) {
-                arr[i][j] = count;
-                count++;
+                arr[i][j] = znachMassiva[count2];
+                count2++;
             }
         }
         return arr;
