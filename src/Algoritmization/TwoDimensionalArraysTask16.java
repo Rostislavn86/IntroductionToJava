@@ -6,7 +6,6 @@ public class TwoDimensionalArraysTask16
 {
     public static void main(String[] args)
     {
-
         int size = 3;
 
         int count = 0;
