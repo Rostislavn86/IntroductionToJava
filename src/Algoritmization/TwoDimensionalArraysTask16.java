@@ -10,21 +10,30 @@ public class TwoDimensionalArraysTask16
 
         int count = 0;
 
-        System.out.println("Магичесий Квадрат(ы)");
+        System.out.println("Сформированный магичесий Квадрат :");
 
-        do
-            {
-            findMagicArray(size,count);
-            }
-        while (findMagicArray(size,count) != size);
-
+        for(;;)
+        {
+            if (findMagicArray(size,count) == size) break;
+        }
     }
+
+    public static int summOfArray(int[][] arr)
+    {
+        int b;
+
+        b = ((arr.length*(arr.length*arr.length+1)))/2;
+
+        return b;
+    }
+
+
 
     public static int findMagicArray(int size, int count)
     {
-        int arr[][] = сreateArray(size, size);
+       int arr[][] = сreateArray(size, size);
 
-        int countRepeat = 0;
+       int countRepeat = 0;
 
         for (int z = 0; z < size; z++)
         {
@@ -34,7 +43,10 @@ public class TwoDimensionalArraysTask16
                     && ((summOfColums(size, count, arr, z) == summOfMainDiagonal(arr)))
                     && (summOfStrings(size, count, arr, z)) == summSideDiagonal(arr)
                     && (summOfColums(size, count, arr, z) == summSideDiagonal(arr))
-                    && (summOfStrings(size, count, arr, z)) == summOfMainDiagonal(arr))
+                    && (summOfStrings(size, count, arr, z)) == summOfMainDiagonal(arr)
+                    && (summOfArray(arr) == summOfMainDiagonal(arr))
+                    && (summOfArray(arr) == summSideDiagonal(arr))
+            )
             {
                 countRepeat++;
             }
