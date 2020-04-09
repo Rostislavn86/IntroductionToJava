@@ -12,7 +12,7 @@ public class DekompozitsiyaAndMethodsTask1
 
     }
 
-    static int getNod(int a, int b)
+    private static int getNod(int a, int b)
     {
         if (a % b == 0)
         {
