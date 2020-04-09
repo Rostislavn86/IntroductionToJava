@@ -57,9 +57,9 @@ public class DekompozitsiyaAndMethodsTask2
             return a;
         }
         if (a > b) {
-            return getNodCD(a%b,b);
+            return getNodFinal(a%b,b);
         }
-        return getNodCD(a,b%a);
+        return getNodFinal(a,b%a);
     }
 
     private static int getNokAB(int a, int b)
