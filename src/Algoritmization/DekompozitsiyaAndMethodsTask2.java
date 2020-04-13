@@ -4,10 +4,10 @@ public class DekompozitsiyaAndMethodsTask2
 {
     public static void main(String[] args)
     {
-        int a = 24;
-        int b = 333;
-        int c = 24;
-        int d = 335;
+        int a = 2;
+        int b = 4;
+        int c = 6;
+        int d = 88;
 
         System.out.println("Наибольший общий делитель = " + getNodFinal(getNodAB(a,b), getNodCD(c,d)));
         System.out.println("Наибольшее общее кратное  = " + getNokFinal(getNokAB(a,b),getNokCD(c,d)));
