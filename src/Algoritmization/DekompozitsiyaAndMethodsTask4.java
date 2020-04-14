@@ -1,5 +1,7 @@
 package Algoritmization;
 
+import java.util.Arrays;
+
 public class DekompozitsiyaAndMethodsTask4
 {
 
@@ -62,11 +64,42 @@ public class DekompozitsiyaAndMethodsTask4
 
         System.out.println(calculateDistanceBetweenPoints(massivXY[0][0],massivXY[0][1],massivXY[1][0],massivXY[1][1]));
 
+        System.out.println("-------------------------");
+
+        System.out.println("точка 1" + " x ="  + massivX[0] + " y=" + massivY[0]);
+        System.out.println("точка 2" + " x ="  + massivX[1] + " y=" + massivY[1]);
+
+        System.out.println(calculateDistanceBetweenPoints(massivX[0], massivY[0],massivX[1],massivY[1]));
+
+        int count = 0;
+
+        double[] maxZnach = new double[n*n];
+
+        for(int i = 0; i < n; i ++)
+        {
+            for(int j = 0; j < n; j ++)
+            {
+                count++;
+                System.out.println(count + ")" + calculateDistanceBetweenPoints(massivX[i], massivY[i],massivX[j],massivY[j]));
+                maxZnach[i] = calculateDistanceBetweenPoints(massivX[i], massivY[i],massivX[j],massivY[j]);
+            }
+            //System.out.println(calculateDistanceBetweenPoints(massivX[0], massivY[0],massivX[i],massivY[i]));
+        }
+
+        Arrays.sort(maxZnach);
+        System.out.println("Max Znach = " + maxZnach[maxZnach.length-1]);
+
                 System.out.println(n);
 
 
 
 
+    }
+
+    public static double findMaxDistanceBitweenPoints(double calculateDistanceBetweenPoints, int n)
+    {
+
+        return 1;
     }
 
     public static double calculateDistanceBetweenPoints(
