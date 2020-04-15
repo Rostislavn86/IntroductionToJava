@@ -17,7 +17,7 @@ public class DekompozitsiyaAndMethodsTask4
 //        int x = rnd;
 //        int y = rnd;
 
-        int n = rnd(1,10); // количество точек от одного до десяти
+        int n = rnd(2,10); // количество точек от двух до десяти
 
         int massivX[] = new int[n];
 
@@ -79,20 +79,30 @@ public class DekompozitsiyaAndMethodsTask4
         {
             for(int j = 0; j < n; j ++)
             {
+                maxZnach[count] = calculateDistanceBetweenPoints(massivX[i], massivY[i], massivX[j], massivY[j]);
                 count++;
                 System.out.println(count + ")" + calculateDistanceBetweenPoints(massivX[i], massivY[i],massivX[j],massivY[j]));
-                maxZnach[i] = calculateDistanceBetweenPoints(massivX[i], massivY[i],massivX[j],massivY[j]);
+
+//                for(int k = 0; k < maxZnach.length; k++)
+//                {
+//                    System.out.println(k);
+//                    maxZnach[k] = calculateDistanceBetweenPoints(massivX[i], massivY[i], massivX[j], massivY[j]);
+//                }
             }
             //System.out.println(calculateDistanceBetweenPoints(massivX[0], massivY[0],massivX[i],massivY[i]));
         }
 
         Arrays.sort(maxZnach);
+
+        for(int i = 0; i < maxZnach.length; i ++)
+            System.out.println("max " + i + " ) " + maxZnach[i]);
+
+
         System.out.println("Max Znach = " + maxZnach[maxZnach.length-1]);
 
                 System.out.println(n);
 
-
-
+        System.out.println(maxZnach.length);
 
     }
 
