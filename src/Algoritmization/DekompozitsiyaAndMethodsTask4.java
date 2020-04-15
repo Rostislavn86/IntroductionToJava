@@ -4,72 +4,22 @@ import java.util.Arrays;
 
 public class DekompozitsiyaAndMethodsTask4
 {
-
-    //https://www.codeflow.site/ru/article/java-distance-between-two-points
-
     public static void main(String[] args)
     {
-        final int min = -15; // Минимальное число для диапазона оси обсциисс
-        final int max = 15; // Максимальное число для диапазона оси ординат
-       // int rnd = rnd(min, max);
+        final int min = -15; // Минимальное число для диапазона значений
+        final int max = 15; // Максимальное число для диапазона значений
 
+        int n = rnd(2,100); // количество точек от двух до ста
 
-//        int x = rnd;
-//        int y = rnd;
+        int massivX[];
+        int massivY[];
 
-        int n = rnd(2,10); // количество точек от двух до десяти
+        massivX = createXdots(n,max,min);
+        massivY = createYdots(n,max,min);
 
-        int massivX[] = new int[n];
+        writeXYdots(massivX,massivY,n);
 
-        System.out.println("-------------------------");
-
-        for(int i = 0; i < n; i ++)
-        {
-            massivX[i] = rnd(min, max);
-            System.out.println(massivX[i]);
-        }
-
-        System.out.println("-------------------------");
-
-        int massivY[] = new int[n];
-
-        for(int i = 0; i < n; i ++)
-        {
-            massivY[i] = rnd(min, max);
-            System.out.println(massivY[i]);
-        }
-
-        System.out.println("-------------------------");
-
-        int massivXY[][] = new int[n][2];
-
-        System.out.println("x  " + " y");
-
-        for(int i = 0; i < n; i ++)
-        {
-            for(int j = 0; j < 2; j ++)
-            {
-                massivXY[i][j] = massivX[i];
-                if (j > 0) massivXY[i][j] = massivY[i];
-                System.out.print(massivXY[i][j] + "\t");
-            }
-            System.out.println();
-
-        }
-
-        System.out.println("-------------------------");
-
-        System.out.println("точка 1" + " x ="  + massivXY[0][0] + " y=" + massivXY[0][1]);
-        System.out.println("точка 2" + " x ="  + massivXY[1][0] + " y=" + massivXY[1][1]);
-
-        System.out.println(calculateDistanceBetweenPoints(massivXY[0][0],massivXY[0][1],massivXY[1][0],massivXY[1][1]));
-
-        System.out.println("-------------------------");
-
-        System.out.println("точка 1" + " x ="  + massivX[0] + " y=" + massivY[0]);
-        System.out.println("точка 2" + " x ="  + massivX[1] + " y=" + massivY[1]);
-
-        System.out.println(calculateDistanceBetweenPoints(massivX[0], massivY[0],massivX[1],massivY[1]));
+        System.out.println("-----------------------------------");
 
         int count = 0;
 
@@ -81,35 +31,81 @@ public class DekompozitsiyaAndMethodsTask4
             {
                 maxZnach[count] = calculateDistanceBetweenPoints(massivX[i], massivY[i], massivX[j], massivY[j]);
                 count++;
-                System.out.println(count + ")" + calculateDistanceBetweenPoints(massivX[i], massivY[i],massivX[j],massivY[j]));
-
-//                for(int k = 0; k < maxZnach.length; k++)
-//                {
-//                    System.out.println(k);
-//                    maxZnach[k] = calculateDistanceBetweenPoints(massivX[i], massivY[i], massivX[j], massivY[j]);
-//                }
             }
-            //System.out.println(calculateDistanceBetweenPoints(massivX[0], massivY[0],massivX[i],massivY[i]));
         }
 
-        Arrays.sort(maxZnach);
+        double maxZnachCifra = findMax(maxZnach);
 
-        for(int i = 0; i < maxZnach.length; i ++)
-            System.out.println("max " + i + " ) " + maxZnach[i]);
+        System.out.println("Максимальное значение между думя точками = " + maxZnachCifra);
 
+        count = 0;
 
-        System.out.println("Max Znach = " + maxZnach[maxZnach.length-1]);
-
-                System.out.println(n);
-
-        System.out.println(maxZnach.length);
-
+        for(int i = 0; i < n; i ++)
+        {
+            for(int j = 0; j < n; j ++)
+            {
+                if (maxZnach[count] == maxZnachCifra)
+                {
+                    System.out.println("Точка " + (i + 1) + "  и Точка " + (j + 1));
+                    break;
+                }
+                count++;
+            }
+            if (maxZnach[count] == maxZnachCifra) break;
+        }
     }
 
-    public static double findMaxDistanceBitweenPoints(double calculateDistanceBetweenPoints, int n)
-    {
+    public static double findMax(double[] arr) {
+        double max = 0;
+        for (int i = 0; i < arr.length; i++) {
 
-        return 1;
+            if (arr[i] > max)
+                max = arr[i];
+        }
+        return max;
+    }
+
+    public static void writeXYdots(int[] massivX, int[] massivY, int n)
+    {
+        System.out.println("Искомые точки по условию задачи : ");
+
+        int massivXY[][] = new int[n][2];
+
+        System.out.println("x  " + " y");
+
+        for(int i = 0; i < n; i ++)
+        {
+            System.out.println("Точка " + (i + 1));
+            for(int j = 0; j < 2; j ++)
+            {
+                massivXY[i][j] = massivX[i];
+                if (j > 0) massivXY[i][j] = massivY[i];
+                System.out.print(massivXY[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
+
+    public static int[] createXdots(int n, int max, int min)
+    {
+        int massivX[] = new int[n];
+
+        for(int i = 0; i < n; i ++)
+        {
+            massivX[i] = rnd(min, max);
+        }
+        return massivX;
+    }
+
+    public static int[] createYdots(int n, int max, int min)
+    {
+        int massivY[] = new int[n];
+
+        for(int i = 0; i < n; i ++)
+        {
+            massivY[i] = rnd(min, max);
+        }
+        return massivY;
     }
 
     public static double calculateDistanceBetweenPoints(
@@ -127,15 +123,4 @@ public class DekompozitsiyaAndMethodsTask4
         return (int) (Math.random() * ++ max) + min;
     }
 
-    public static int[] сreateArrayX(int n, int x)
-    {
-
-        int arr[] = new int[n];
-
-        for (int i = 0; i < n; i++)
-        {
-
-        }
-        return arr;
-    }
 }
