@@ -1,7 +1,5 @@
 package Algoritmization;
 
-import java.util.Arrays;
-
 public class DekompozitsiyaAndMethodsTask4
 {
     public static void main(String[] args)
@@ -46,7 +44,8 @@ public class DekompozitsiyaAndMethodsTask4
             {
                 if (maxZnach[count] == maxZnachCifra)
                 {
-                    System.out.println("Точка " + (i + 1) + "  и Точка " + (j + 1));
+                    System.out.println("Максимальное расстояие между точками ");
+                    System.out.println((i + 1) + " и " + (j + 1));
                     break;
                 }
                 count++;
