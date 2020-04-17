@@ -34,3 +34,5 @@ public class DekompozitsiyaAndMethodsTask1
         return (a*b)/(getNod(a,b));
     }
 }
+
+
