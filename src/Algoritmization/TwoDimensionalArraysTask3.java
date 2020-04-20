@@ -1,5 +1,7 @@
 package Algoritmization;
 
+//3. Дана матрица. Вывести k-ю строку и p-й столбец матрицы.
+
 public class TwoDimensionalArraysTask3 {
     public static void main(String[] args)
     {

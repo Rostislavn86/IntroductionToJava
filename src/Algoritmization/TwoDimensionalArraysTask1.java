@@ -1,5 +1,7 @@
 package Algoritmization;
 
+//1. Дана матрица. Вывести на экран все нечетные столбцы, у которых первый элемент больше последнего.
+
 public class TwoDimensionalArraysTask1
 {
     public static void main(String[] args)

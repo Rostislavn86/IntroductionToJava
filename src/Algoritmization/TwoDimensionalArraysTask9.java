@@ -1,5 +1,8 @@
 package Algoritmization;
 
+//9. Задана матрица неотрицательных чисел. Посчитать сумму элементов в каждом столбце. Определить, какой
+//столбец содержит максимальную сумму.
+
 public class TwoDimensionalArraysTask9
 {
     public static void main(String[] args)

@@ -1,5 +1,7 @@
 package Algoritmization;
 
+//10. Найти положительные элементы главной диагонали квадратной матрицы
+
 public class TwoDimensionalArraysTask10
 {
     public static void main(String[] args)

@@ -1,5 +1,8 @@
 package Algoritmization;
 
+//3. Вычислить площадь правильного шестиугольника со стороной а, используя метод вычисления площади
+//треугольника
+
 public class DekompozitsiyaAndMethodsTask3
 {
     public static void main(String[] args)

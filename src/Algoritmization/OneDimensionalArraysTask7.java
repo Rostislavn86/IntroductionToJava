@@ -1,6 +1,6 @@
 package Algoritmization;
 
-// Задача 7
+// Задача 7. Одномерные массивы
 
 public class OneDimensionalArraysTask7 {
     public static void main(String[] args)

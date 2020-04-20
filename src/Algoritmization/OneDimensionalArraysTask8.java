@@ -1,6 +1,6 @@
 package Algoritmization;
 
-// Задача 8
+// Задача 8. Одномерные массивы.
 
 public class OneDimensionalArraysTask8
 {

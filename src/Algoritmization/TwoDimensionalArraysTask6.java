@@ -1,5 +1,7 @@
 package Algoritmization;
 
+//6. Сформировать квадратную матрицу порядка n по заданному образцу(n - четное):
+
 public class TwoDimensionalArraysTask6
 {
     public static void main(String[] args)

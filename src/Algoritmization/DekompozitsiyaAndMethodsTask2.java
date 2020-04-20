@@ -1,5 +1,7 @@
 package Algoritmization;
 
+//2. Написать метод(методы) для нахождения наибольшего общего делителя четырех натуральных чисел
+
 public class DekompozitsiyaAndMethodsTask2
 {
     public static void main(String[] args)

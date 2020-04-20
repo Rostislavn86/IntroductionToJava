@@ -1,5 +1,7 @@
 package Algoritmization;
 
+//7. Сформировать квадратную матрицу порядка N по правилу, и подсчитать количество положительных элементов в ней.
+
 public class TwoDimensionalArraysTask7
 {
     public static void main(String[] args)

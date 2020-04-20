@@ -1,6 +1,6 @@
 package Algoritmization;
 
-import org.w3c.dom.ls.LSOutput;
+//15. Найдите наибольший элемент матрицы и заменить все нечетные элементы на него.
 
 public class TwoDimensionalArraysTask15 {
     public static void main(String[] args)

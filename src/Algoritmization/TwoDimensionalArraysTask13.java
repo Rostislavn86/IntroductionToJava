@@ -2,6 +2,8 @@ package Algoritmization;
 
 import java.util.Arrays;
 
+//13. Отсотрировать стобцы матрицы по возрастанию и убыванию значений эементов
+
 public class TwoDimensionalArraysTask13
 {
     public static void main(String[] args)

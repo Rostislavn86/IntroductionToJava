@@ -3,6 +3,9 @@ package Algoritmization;
 import java.util.Arrays;
 import java.util.Random;
 
+//14. Сформировать случайную матрицу m x n, состоящую из нулей и единиц, причем в каждом столбце число
+//единиц равно номеру столбца
+
 public class TwoDimensionalArraysTask14
 {
     public static void main(String[] args)

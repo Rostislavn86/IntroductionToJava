@@ -16,7 +16,7 @@ public class OneDimensionalArraysTask6
                 summ+=arr[i];
         }
 
-        System.out.println(summ);
+        System.out.println("Cумма чисел = " + summ);
 
     }
 

@@ -1,5 +1,9 @@
 package Algoritmization;
 
+//8. Задан массив D. Определить следующие суммы: D[l] + D[2] + D[3]; D[3] + D[4] + D[5]; D[4] +D[5] +D[6].
+//Пояснение. Составить метод(методы) для вычисления суммы трех последовательно расположенных элементов
+//массива с номерами от k до m.
+
 public class DekompozitsiyaAndMethodsTask8 {
     public static void main(String[] args)
     {
@@ -10,11 +14,11 @@ public class DekompozitsiyaAndMethodsTask8 {
 
         if ((k % 2 == 0))
         {
-            System.out.println("чёт " +collectMethodChet(k, m, arr));
+            System.out.println("Сумма элементов по условию задачи =  " + collectMethodChet(k, m, arr));
         }
         else
         {
-            System.out.println("не чёт " + collectMethodNeChet(k, m, arr));
+            System.out.println("Сумма элементов по условию задачи = " + collectMethodNeChet(k, m, arr));
         }
     }
 

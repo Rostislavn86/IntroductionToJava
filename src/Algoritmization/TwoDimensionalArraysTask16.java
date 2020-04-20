@@ -2,6 +2,8 @@ package Algoritmization;
 
 import java.util.Random;
 
+//16. Задание 16. Построить магический квадрат.
+
 public class TwoDimensionalArraysTask16
 {
     public static void main(String[] args)
