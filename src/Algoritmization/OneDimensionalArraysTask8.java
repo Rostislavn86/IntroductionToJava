@@ -1,5 +1,7 @@
 package Algoritmization;
 
+// Задача 8
+
 public class OneDimensionalArraysTask8
 {
     public static void main(String[] args)

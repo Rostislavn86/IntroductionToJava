@@ -1,5 +1,7 @@
 package Algoritmization;
 
+//5. Даны целые числа а1 ,а2 ,..., аn . Вывести на печать только те числа, для которых аi > i.
+
 public class OneDimensionalArraysTask5
 {
     public static void main(String[] args) {

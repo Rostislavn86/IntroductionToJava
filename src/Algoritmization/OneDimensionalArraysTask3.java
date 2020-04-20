@@ -2,6 +2,8 @@ package Algoritmization;
 
 import java.util.Random;
 
+//3. Дан массив действительных чисел, размерность которого N. Подсчитать, сколько в нем отрицательных, положительных и нулевых элементов.
+
 public class OneDimensionalArraysTask3 {
     public static void main(String[] args) {
 

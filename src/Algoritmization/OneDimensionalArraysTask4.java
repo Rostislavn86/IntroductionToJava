@@ -2,6 +2,8 @@ package Algoritmization;
 
 import java.util.Arrays;
 
+//4. Даны действительные числа а1 ,а2 ,..., аn . Поменять местами наибольший и наименьший элементы.
+
 public class OneDimensionalArraysTask4
 {
     public static void main(String[] args)

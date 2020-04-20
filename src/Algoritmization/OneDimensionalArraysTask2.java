@@ -1,5 +1,7 @@
 package Algoritmization;
 
+// 2. Дана последовательность действительных чисел а1 ,а2 ,..., ап. Заменить все ее члены, большие данного Z, этим числом. Подсчитать количество замен.
+
 public class OneDimensionalArraysTask2 {
     public static void main(String[] args) {
 
