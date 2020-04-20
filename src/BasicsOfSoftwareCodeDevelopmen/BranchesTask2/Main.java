@@ -1,5 +1,7 @@
 package BasicsOfSoftwareCodeDevelopmen.BranchesTask2;
 
+//2. Найти max{min(a, b), min(c, d)}.
+
 public class Main
 {
     public static void main(String[] args) {

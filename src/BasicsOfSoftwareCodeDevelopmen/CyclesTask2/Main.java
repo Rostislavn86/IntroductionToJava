@@ -1,5 +1,7 @@
 package BasicsOfSoftwareCodeDevelopmen.CyclesTask2;
 
+//2. Вычислить значения функции на отрезке [а,b] c шагом h
+
 public class Main
 {
     public static void main(String[] args)
@@ -9,7 +11,7 @@ public class Main
         int h = 3;
 
         System.out.println("Значение функции (смотри условие) на отрезке " + "от a = " + a);
-        System.out.println("до " + " b = " + b + " c шагом " + h);
+        System.out.println("до " + " b = " + b + " c шагом h = " + h);
 
         while (a<=b)
         {

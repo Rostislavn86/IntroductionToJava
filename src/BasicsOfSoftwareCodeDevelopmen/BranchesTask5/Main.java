@@ -1,5 +1,7 @@
 package BasicsOfSoftwareCodeDevelopmen.BranchesTask5;
 
+//5. Вычислить значение функции
+
 public class Main
 {
     public static void main(String[] args) {

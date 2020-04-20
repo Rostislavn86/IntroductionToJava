@@ -1,5 +1,7 @@
 package BasicsOfSoftwareCodeDevelopmen.CyclesTask4;
 
+//4. Составить программу нахождения произведения квадратов первых двухсот чисел.
+
 public class Main
 {
     public static void main(String[] args)
@@ -11,7 +13,7 @@ public class Main
             summ *= Math.pow(i,2);
         }
 
-        System.out.println(summ);
+        System.out.println("Произведение квадратов первых двухсот чисел = " + summ);
 
     }
 }

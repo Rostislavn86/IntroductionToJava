@@ -1,5 +1,7 @@
 package BasicsOfSoftwareCodeDevelopmen.CyclesTask3;
 
+//3. Найти сумму квадратов первых ста чисел.
+
 public class Main
 {
     public static void main(String[] args) {
@@ -11,7 +13,7 @@ public class Main
             summ += Math.pow(i,2);
         }
 
-        System.out.println(summ);
+        System.out.println("Cумма квадратов первых ста чисел = " + summ);
 
     }
 }

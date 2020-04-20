@@ -1,5 +1,7 @@
 package BasicsOfSoftwareCodeDevelopmen.CyclesTask6;
 
+//6. Вывести на экран соответствий между символами и их численными обозначениями в памяти компьютера.
+
 public class Main
 {
     public static void main(String[] args) {

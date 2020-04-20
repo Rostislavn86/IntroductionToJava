@@ -2,6 +2,9 @@ package BasicsOfSoftwareCodeDevelopmen.CyclesTask1;
 
 import java.util.Scanner;
 
+//1. Напишите программу, где пользователь вводит любое целое положительное число. А программа суммирует
+//все числа от 1 до введенного пользователем числа.
+
 public class Main
 {
     public static void main(String[] args)
@@ -18,7 +21,7 @@ public class Main
 
             if (cifra < 0)
             {
-                System.out.println("Вы введи отрицательное число, программа будет закрыта");
+                System.out.println("Вы ввели отрицательное число, программа будет закрыта");
                 System.out.println("Cумма введённых вами положительных чисел равна = " + summ);
                 break;
             }

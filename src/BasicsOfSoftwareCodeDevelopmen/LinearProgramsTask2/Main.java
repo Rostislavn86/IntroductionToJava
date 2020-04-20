@@ -1,5 +1,7 @@
 package BasicsOfSoftwareCodeDevelopmen.LinearProgramsTask2;
 
+//2. Вычислить значение выражения по формуле (все переменные принимают действительные значения):
+
 public class Main
 {
 
@@ -13,7 +15,7 @@ public class Main
 
         z = ((b + Math.sqrt(Math.pow(b,2) + 4 * a * c)) / 2 * a) - (Math.pow(a,3) * c + Math.pow(b, - 2));
 
-        System.out.println(z);
+        System.out.println("Значение выражения по формуле = " + z);
 
     }
 }
