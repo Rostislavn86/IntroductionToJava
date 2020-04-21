@@ -22,7 +22,7 @@ public class TwoDimensionalArraysTask9
             }
             System.out.println();
         }
-        WorkMethod(arr);
+        workMethod(arr);
     }
 
     public static int[][] createArray(int x, int y)
@@ -42,7 +42,7 @@ public class TwoDimensionalArraysTask9
         return arr;
     }
 
-    public static void WorkMethod(int[][] arr) {
+    public static void workMethod(int[][] arr) {
 
         int[] maxMass = new int[arr.length];
 
