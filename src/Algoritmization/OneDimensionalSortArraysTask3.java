@@ -1,5 +1,7 @@
 package Algoritmization;
 
+//3. Сортировка выбором
+
 public class OneDimensionalSortArraysTask3
 {
     public static void main(String[] args)

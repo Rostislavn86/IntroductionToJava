@@ -1,5 +1,7 @@
 package Algoritmization;
 
+//5. Сортировка вставками.
+
 public class OneDimensionalSortArraysTask5
 {
     public static void main(String[] args)

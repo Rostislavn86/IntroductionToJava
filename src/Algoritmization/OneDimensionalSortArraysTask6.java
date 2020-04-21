@@ -1,5 +1,7 @@
 package Algoritmization;
 
+//6. Сортировка Шелла.
+
 public class OneDimensionalSortArraysTask6
 {
     public static void main(String[] args)
