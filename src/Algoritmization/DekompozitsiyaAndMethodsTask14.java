@@ -4,7 +4,7 @@ package Algoritmization;
 // Найти и напечатать все пары «близнецов» из отрезка [n,2n], где n - заданное натуральное число больше
 // 2. Для решения задачи использовать декомпозицию.
 
-public class DekompozitsiyaAndMethodsTask13
+public class DekompozitsiyaAndMethodsTask14
 {
     public static void main(String[] args)
     {
