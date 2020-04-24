@@ -14,39 +14,33 @@ public class Test2
 //
 //        int n = con.nextInt();
 
-        int m[][] = { { 6, 1, 8 },
-                        { 7, 5, 3  },
-                        { 2, 9 ,4  }
-        };
+        int m[] = {1,2,3,4,5,6,7,8};
 
-      //  int m[][] = new int[n][n];
-
-
-
-
-
-
-
-        int a = 0, b = 0;
-
-        for(int i = 0; i < m.length; i++)
-
-            for(int j = 0; j < m.length; j++)
-
-            {
-
-                if (i == j) a += m[i][j];
-
-                if (i + j == m.length - 1) b += m[i][j];
-
-            }
-
-
-
-        System.out.println(a + " " + b);
-
-       // con.close();
+        System.out.println(checkVosvrAndcheckVozvrByOne(m));
 
     }
+
+    public static boolean checkVosvrAndcheckVozvrByOne(int[] arr)
+    {
+        boolean b = false;
+
+        for(int i = 0; i < arr.length;)
+        {
+            if (i + 1 == arr.length) break;
+
+            if ((arr[i] < arr[i + 1]) && (arr[i+1] - arr[i] == 1))
+            {
+                i++;
+                b = true;
+            }
+            else
+            {
+                b = false;
+                break;
+            }
+        }
+        return b;
+    }
+
 
 }
