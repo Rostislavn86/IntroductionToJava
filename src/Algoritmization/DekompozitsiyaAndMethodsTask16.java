@@ -24,7 +24,7 @@ public class DekompozitsiyaAndMethodsTask16
         {
             if ((numberOfSigns == findNumberOfCharacters(arr[i])))
             {
-                if (chekOddNumbersInArray(createArrayNumbers(arr[i])) == true)
+                if (chekOddNumbersInArray(createArrayFromNumbers(arr[i])) == true)
                 {
                 sum += arr[i];
                 //System.out.println("arr[i] " + arr[i] + " summ = " + sum);
@@ -36,7 +36,7 @@ public class DekompozitsiyaAndMethodsTask16
 
         System.out.println("=================================");
         System.out.println("Сумма цифр согласно условию задачи = " + sum);
-        System.out.println("Чётных цифр в найденной сумме = " + findCountOddDigitsInSumm(createArrayNumbers(sum)));
+        System.out.println("Чётных цифр в найденной сумме = " + findCountOddDigitsInSumm(createArrayFromNumbers(sum)));
     }
 
     public static int findCountOddDigitsInSumm(int[] arr)
@@ -70,7 +70,7 @@ public class DekompozitsiyaAndMethodsTask16
         return flag;
     }
 
-    public static int[] createArrayNumbers(int n)
+    public static int[] createArrayFromNumbers(int n)
     {
         int j = 0;
         int len = findNumberOfCharacters(n);
