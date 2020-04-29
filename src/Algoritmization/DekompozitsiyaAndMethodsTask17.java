@@ -16,7 +16,6 @@ public class DekompozitsiyaAndMethodsTask17
             count++;
         //    System.out.println("count " + count + " chislo " + chislo + " summ " + findSummDigits(createArrayFromNumbers(chislo)));
         }
-
         System.out.println("Количество действий необходимых для получения результата согласно условию задачи : " + (count - 1));
     }
 
