@@ -11,7 +11,7 @@ public class DekompozitsiyaAndMethodsTask15
 
         int[] arr = new int[numberOfDigits];
 
-        int numberOfSigns = 6;
+        int numberOfSigns = 8;
         
         System.out.println("Все натуральные " + numberOfSigns + " - значные числа образующие строго возрастающую последовательность"
                 + ", например, 1234, 5789.");
@@ -112,9 +112,8 @@ public class DekompozitsiyaAndMethodsTask15
     {
         int rez = 0;
         int decriment = 1;
-        for(int i = 0;;i++ )
+        for(;;)
         {
-
             if (x/decriment == 0) break;
             rez += 1;
             decriment *= 10;
