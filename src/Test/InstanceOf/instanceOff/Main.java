@@ -1,4 +1,4 @@
-package Test.InstanceOf;
+package Test.InstanceOf.instanceOff;
 
 //https://javarush.ru/groups/posts/1947-instanceof-i-osnovih-nasledovanija
 
