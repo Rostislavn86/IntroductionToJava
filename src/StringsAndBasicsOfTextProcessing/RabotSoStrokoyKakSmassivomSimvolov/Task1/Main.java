@@ -6,9 +6,12 @@ package StringsAndBasicsOfTextProcessing.RabotSoStrokoyKakSmassivomSimvolov.Task
 //1. Дан массив названий переменных в camelCase. Преобразовать названия в snake_case.
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         String[] names = {"biCapitalization", "bumpyCaps", "bumpyCase", "wordsStrungTogether", "wordsRunTogether"};
+        System.out.println("CamelCase :");
         printArray(names);
+        System.out.println("snake_case :");
         printArray(changeArray(names));
     }
 
