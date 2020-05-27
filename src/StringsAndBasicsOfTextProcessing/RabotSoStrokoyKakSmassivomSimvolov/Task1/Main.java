@@ -1,67 +1,58 @@
 package StringsAndBasicsOfTextProcessing.RabotSoStrokoyKakSmassivomSimvolov.Task1;
 
-//https://vertex-academy.com/tutorials/ru/chto-takoe-camelstyle/
+//https://ru.wikipedia.org/wiki/CamelCase
 //https://ru.wikipedia.org/wiki/Snake_case
+
+//1. Дан массив названий переменных в camelCase. Преобразовать названия в snake_case.
 
 public class Main {
     public static void main(String[] args) {
-        String[] names = {"camelCaseAndCamelCase", "camelCase", "camelCase", "camelCase", "userFirstName", "userLastName", "userPhone", "userAge"};
+        String[] names = {"biCapitalization", "bumpyCaps", "bumpyCase", "wordsStrungTogether", "wordsRunTogether"};
         printArray(names);
-        //changeArray(names);
-
-        //changeArray(changeArray(names));
-
-        printArray(changeArray(changeArray(names)));
+        printArray(changeArray(names));
     }
 
     private static String[] changeArray(String[] names)
     {
-      String[] newArray = new String[names.length];
-      String[] tempUpperCase = "QWERTYUIOPASDFGHJKLZXCVBNM1234567890".split("");
+        String s = "";
 
-      for(int j = 0; j < newArray.length; j++)
-      {
-              for (int i = 0; i < tempUpperCase.length; i++)
-              {
-                  if (names[j].contains(tempUpperCase[i]))
-                  {
-                      newArray[j] = changeWord(names[j], tempUpperCase[i]);
-                  }
-              }
-      }
-      return newArray;
-    }
+        int count = 0;
 
-    private static String changeWord(String stroka, String upperSighn)
-    {
-        String s1 = stroka;
-        char[] ch = s1.toCharArray();
-
-        String s2 = upperSighn;
-        char[] znach = s2.toCharArray();
-
-        String newString = null;
-
-            for (int i = 0; i < ch.length; i++)
+        for(int i = 0; i < names.length; i++)
+        {
+            if (count > 0)
             {
-                if (ch[i] == znach[0])
-                {
-                    newString = s1.replace(s2, "_" + Character.toLowerCase(znach[0]));
-                }
+                s += ' ';
+                count = 0;
             }
-        return newString;
-    }
+            String n = names[i];
+            s += n;
+            count++;
+        }
 
+        char[] c = s.toCharArray();
+
+        for(int i = 0; i < c.length; i++)
+        {
+            for(int j = 0; j < names.length; j++)
+            {
+                String changeSighn = Character.toString(c[i]);
+                String changedSighn =  Character.toString(Character.toLowerCase(c[i]));
+                if (Character.isUpperCase(c[i])) names[j] = names[j].replaceAll(changeSighn,"_" + changedSighn);
+            }
+        }
+
+        return names;
+    }
 
     private static void printArray(String[] array)
     {
-        for (String s : array) {
+        for (String s : array)
+        {
             System.out.print(s + " ");
         }
         System.out.println();
     }
-
-
 }
 
 
