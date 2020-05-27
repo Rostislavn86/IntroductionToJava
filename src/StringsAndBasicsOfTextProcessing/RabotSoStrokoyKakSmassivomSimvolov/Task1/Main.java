@@ -41,7 +41,6 @@ public class Main {
                 if (Character.isUpperCase(c[i])) names[j] = names[j].replaceAll(changeSighn,"_" + changedSighn);
             }
         }
-
         return names;
     }
 
