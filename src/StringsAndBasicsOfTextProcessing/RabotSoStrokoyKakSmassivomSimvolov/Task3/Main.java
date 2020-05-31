@@ -1,5 +1,7 @@
 package StringsAndBasicsOfTextProcessing.RabotSoStrokoyKakSmassivomSimvolov.Task3;
 
+//3. В строке найти количество цифр
+
 public class Main
 {
     public static void main(String[] args)
@@ -9,11 +11,10 @@ public class Main
 
         String[] strArray = str.split("");
 
-        System.out.println(count(strArray,stringNumbers));
-
+        System.out.println("Количество чисел в строке : "+ str + " = " + countNumber(strArray,stringNumbers));
     }
 
-    private static int count(String[] strArray, String[] stringsOfNumbers)
+    private static int countNumber(String[] strArray, String[] stringsOfNumbers)
     {
         int count = 0;
 

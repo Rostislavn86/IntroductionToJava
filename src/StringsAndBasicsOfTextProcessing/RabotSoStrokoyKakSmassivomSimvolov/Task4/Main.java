@@ -1,49 +1,50 @@
 package StringsAndBasicsOfTextProcessing.RabotSoStrokoyKakSmassivomSimvolov.Task4;
 
+//4. В строке найти количество чисел.
+
 public class Main
 {
     public static void main(String[] args)
     {
-        String str = "1321asdsadsagf123dgdf";
-        String[] stringNumbers = "1234567890".split("");
+        String str = "11sad32asdasd456";
 
-        String[] strArray = str.split("");
-
-        System.out.println(count(strArray,stringNumbers));
-
-        isItNumber(stringNumbers);
-
+        System.out.println("Количество чисел в строке " + str + " = " + countDigit(str));
     }
 
-    private static int count(String[] strArray, String[] stringsOfNumbers)
+    private static int countDigit(String str)
     {
-        int count = 0;
+        String[] strArray = str.split("");
 
-        String tempStringNumbers = "";
+        String strTemp = "";
 
-        for(int i = 0; i < strArray.length; i++)
+        for (int i = 0; i < str.length(); i++)
         {
-            for(int j = 0; j < stringsOfNumbers.length; j++)
-            {
-                //if (!strArray[i].equals(stringsOfNumbers[j])) tempStringNumbers += "_";
-                if (strArray[i].equals(stringsOfNumbers[j])) tempStringNumbers += stringsOfNumbers[j];
-            }
+            if (isDigit(strArray[i])) strTemp += strArray[i];
+            if (!isDigit(strArray[i])) strTemp += " * ";
         }
 
-        System.out.println("tempStringNumbers " + tempStringNumbers);
+        String[] finalArray = strTemp.split(" * ");
+
+        int count = 0;
+
+        for (int i = 0; i < finalArray.length; i++)
+        {
+        if (isDigit(finalArray[i])) count++;
+        }
 
         return count;
     }
 
-    private static boolean isItNumber(String[] arrayString)
+    private static boolean isDigit(String s) throws NumberFormatException
     {
-        String tempString = "";
-        for(int i = 0; i < arrayString.length; i++)
+        try
         {
-            tempString += arrayString[i];
-            System.out.println(tempString);
+            Integer.parseInt(s);
+            return true;
         }
-
-        return false;
+        catch (NumberFormatException e)
+        {
+            return false;
+        }
     }
 }

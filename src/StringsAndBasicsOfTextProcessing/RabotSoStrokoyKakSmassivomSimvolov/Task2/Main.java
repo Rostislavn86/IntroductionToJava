@@ -1,10 +1,20 @@
 package StringsAndBasicsOfTextProcessing.RabotSoStrokoyKakSmassivomSimvolov.Task2;
 
+//2. Замените в строке все вхождения 'word' на 'letter'.
+
 public class Main
 {
     public static void main(String[] args)
     {
         String[] stringArray = {"word", "word", "notword"};
+
+        System.out.println("Изначальные значения : ");
+        for(int i = 0; i <stringArray.length; i++)
+        {
+            System.out.println(stringArray[i]);
+        }
+
+        System.out.println("Изменённые значения : ");
         changeArray(stringArray);
     }
 
