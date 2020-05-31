@@ -1,4 +1,4 @@
-package StringsAndBasicsOfTextProcessing.RabotSoStrokoyKakSmassivomSimvolov.Task2;
+package StringsAndBasicsOfTextProcessing.WorkingWithAstringAsAnArrayOfCharacters.Task2;
 
 //2. Замените в строке все вхождения 'word' на 'letter'.
 

@@ -1,4 +1,4 @@
-package StringsAndBasicsOfTextProcessing.RabotSoStrokoyKakSmassivomSimvolov.Task4;
+package StringsAndBasicsOfTextProcessing.WorkingWithAstringAsAnArrayOfCharacters.Task4;
 
 //4. В строке найти количество чисел.
 

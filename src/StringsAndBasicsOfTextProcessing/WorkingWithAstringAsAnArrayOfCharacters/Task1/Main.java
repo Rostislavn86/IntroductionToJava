@@ -1,4 +1,4 @@
-package StringsAndBasicsOfTextProcessing.RabotSoStrokoyKakSmassivomSimvolov.Task1;
+package StringsAndBasicsOfTextProcessing.WorkingWithAstringAsAnArrayOfCharacters.Task1;
 
 //https://ru.wikipedia.org/wiki/CamelCase
 //https://ru.wikipedia.org/wiki/Snake_case
