@@ -6,31 +6,31 @@ public class Main
 {
     public static void main(String[] args)
     {
-        String str = "a456bc c456789de defdAAA";
+        StringBuilder str = new StringBuilder("topot TOPOT");
 
-        String[] strArrayWord = str.split(" ");
+        String[] strArray = str.toString().split("");
 
         String strLetterSmall = "qwertyuiopasdfghjklzxcvbnm";
 
         String[] strLetterSmallArray = strLetterSmall.split("");
 
-        String strLetterBig = "QWERTYUIOPASDFGHJKLZXCVBNM";
+        String strLetterBig = strLetterSmall.toUpperCase();
 
         String[] strLetterBigArray = strLetterBig.split("");
 
         int count = 0;
 
-        for(int i = 0; i < strArrayWord.length; i ++)
+        for(int i = 0 ; i < strArray.length; i ++)
         {
-            for(int j = 0; j < strLetterSmallArray.length; j ++)
+            for(int j = 0 ; j < strLetterSmallArray.length; j ++)
             {
-                if (strArrayWord[i].equals(strLetterSmallArray[j])) count++;
-                if (strArrayWord[i].equals(strLetterBigArray[j])) count++;
+                if (strArray[i].equals(strLetterSmallArray[j])) count++;
+                if (strArray[i].equals(strLetterBigArray[j])) count++;
             }
         }
 
-        System.out.println(count);
-
+        System.out.println("Изначальная строка : " + str);
+        System.out.println("Количество строчных (маленьких) и прописных (больших) букв в введенной строке = " + count);
 
     }
 }
