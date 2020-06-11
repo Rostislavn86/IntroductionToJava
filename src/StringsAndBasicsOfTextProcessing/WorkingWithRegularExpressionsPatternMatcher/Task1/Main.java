@@ -7,6 +7,7 @@ package StringsAndBasicsOfTextProcessing.WorkingWithRegularExpressionsPatternMat
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -15,17 +16,47 @@ public class Main {
     {
         String contents = new String(Files.readAllBytes(Paths.get("D:\\Epam_Task\\Introduction to Java\\src\\StringsAndBasicsOfTextProcessing\\WorkingWithRegularExpressionsPatternMatcher\\Task1\\text.txt")));
 
-        System.out.println("---------------------------------------");
+       // System.out.println("---------------------------------------");
 
         //https://www.javatpoint.com/java-pattern-split-method
 
-        System.out.println(createParagraphArray(contents)[3]);
 
-        countOfSentence(createParagraphArray(contents)[3]);
+        // Сортировка Абзацев
+        String[] newString;
 
-        System.out.println("------------------------------");
+        newString = sortNumberOfSentence(createParagraphArray(contents),contents);
 
-        System.out.println(countOfSentence(createParagraphArray(contents)[3]));
+        for (int i = 0; i < sortNumberOfSentence(createParagraphArray(contents),contents).length; i++)
+        {
+            System.out.println(newString[i]);
+            if (i == 1) System.out.println();
+        }
+
+
+    }
+
+    private static String[] sortNumberOfSentence(String[] str, String text)
+    {
+        String[] sotredString = new String[str.length];
+
+        int[] numbreOfSentence = new int[createParagraphArray(text).length];
+
+        for(int i = 0; i < numbreOfSentence.length; i++)
+        {
+            numbreOfSentence[i] = countOfSentence(createParagraphArray(text)[i]);
+        }
+
+        Arrays.sort(numbreOfSentence);
+
+        for (int i = 0; i < numbreOfSentence.length; i++)
+        {
+            for (int j = 0; j < numbreOfSentence.length; j++)
+            {
+                if (numbreOfSentence[i] == countOfSentence(createParagraphArray(text)[j])) sotredString[i] = str[j];
+            }
+        }
+
+        return sotredString;
 
     }
 
