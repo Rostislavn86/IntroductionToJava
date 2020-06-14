@@ -1,4 +1,4 @@
-package Test.InstanceOf.TestMatches.Lesson1.Lesson2LiterralCharaccter;
+package Test.InstanceOf.TestMatches.Lesson2LiterralCharaccter;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

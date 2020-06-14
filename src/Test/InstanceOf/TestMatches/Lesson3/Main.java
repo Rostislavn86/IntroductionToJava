@@ -1,4 +1,4 @@
-package Test.InstanceOf.TestMatches.Lesson1;
+package Test.InstanceOf.TestMatches.Lesson3;
 
 //https://www.youtube.com/watch?v=E0stQ86pPDA&list=PL786bPIlqEjQsE_WAcKpkZ-Q4T-A8j1D2&index=2
 

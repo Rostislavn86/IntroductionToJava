@@ -4,9 +4,15 @@ package StringsAndBasicsOfTextProcessing.WorkingWithRegularExpressionsPatternMat
 // отсортировать абзацы по количеству предложений; в каждом предложении отсортировать слова по длине;
 // отсортировать лексемы в предложении по убыванию количества вхождений заданного символа, а в случае равенства – по алфавиту.
 
+//Read more: https://javarevisited.blogspot.com/2015/09/how-to-read-file-into-string-in-java-7.html#ixzz6OxQnNVns
+//https://www.javatpoint.com/java-pattern-split-method
+
+import org.w3c.dom.ls.LSOutput;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,22 +24,152 @@ public class Main {
 
        // System.out.println("---------------------------------------");
 
-        //https://www.javatpoint.com/java-pattern-split-method
+
 
 
         // Сортировка Абзацев
-        String[] newString;
+//        String[] newString;
+//
+//        newString = sortNumberOfSentence(createParagraphArray(contents),contents);
+//
+//        for (int i = 0; i < sortNumberOfSentence(createParagraphArray(contents),contents).length; i++)
+//        {
+//            System.out.println(newString[i]);
+//            if (i == 1) System.out.println();
+//        }
 
-        newString = sortNumberOfSentence(createParagraphArray(contents),contents);
+        // Сортировка слов по длинне в абзаце
+        //sortParagraphByTheLenghtOfTheWord(contents);
 
-        for (int i = 0; i < sortNumberOfSentence(createParagraphArray(contents),contents).length; i++)
-        {
-            System.out.println(newString[i]);
-            if (i == 1) System.out.println();
-        }
+        // Сортировка слов в предложении
+        sortParagraphTheLenghtOfTheWordInSentence(contents);
+
 
 
     }
+
+    private static void sortParagraphTheLenghtOfTheWordInSentence(String text)
+    {
+
+        String string = text;
+        String[] stringArray = new String[30];
+        String[] stringArray2 = new String[10];
+        Matcher matcher = Pattern.compile("([^.!?]+[.!?])").matcher(string);
+
+        String textFinal = "";
+
+        while (matcher.find())
+        {
+            stringArray[0] = matcher.group(1);
+
+            stringArray2 = stringArray[0].split(" ");
+
+            Arrays.sort(stringArray2,new StringLengthComparator());
+
+            System.out.println(Arrays.toString(stringArray2));
+
+            textFinal += Arrays.toString(stringArray2);
+           // System.out.println(matcher.group(1));
+        }
+
+        System.out.println("--------------------");
+
+        textFinal = textFinal.replaceAll(",","");
+
+        System.out.println(textFinal);
+    }
+
+    private static void sortParagraphByTheLenghtOfTheWord(String text)
+    {
+        String[] arrayOfSentence = new String[createParagraphArray(text).length - 1];
+
+          //      String[] arrayOfSentence = createParagraphArray(text);
+
+        System.out.println("-------------------------------");
+
+        for(int i = 0; i < arrayOfSentence.length; i++)
+        {
+            //System.out.println(createParagraphArray(text)[0]);
+            if (createParagraphArray(text)[i].equals(createParagraphArray(text)[0])) continue;
+            arrayOfSentence[i]= createParagraphArray(text)[i];
+           // System.out.println("1" + arrayOfSentence[i]);
+        }
+
+        String wordsOfArrayOfSentence = "";
+
+        for(int i = 0; i < arrayOfSentence.length; i++)
+        {
+      //  wordsOfArrayOfSentence += arrayOfSentence[i];
+        }
+
+       // System.out.println(wordsOfArrayOfSentence);
+
+
+
+        Pattern p1 = Pattern.compile("[а-юА-Юa-zA-Z\\s]");
+        Matcher m1 = p1.matcher(arrayOfSentence[2]);
+
+        for(int i = 0; i < 300; i++)
+        {
+            if (m1.find())
+            {
+                wordsOfArrayOfSentence += m1.group();
+            }
+        }
+
+        String[] wordsOfArrayOfSentenceArray = wordsOfArrayOfSentence.split(" ");
+
+        for(int i = 0; i < wordsOfArrayOfSentenceArray.length; i++)
+        {
+            System.out.println(wordsOfArrayOfSentenceArray[i]);
+        }
+
+        System.out.println(wordsOfArrayOfSentence);
+
+        System.out.println("---------------------------------");
+
+        //https://stackoverflow.com/questions/35866240/how-to-sort-string-array-by-length-using-arrays-sort
+
+        Arrays.sort(wordsOfArrayOfSentenceArray,new StringLengthComparator());
+
+        System.out.println(Arrays.toString(wordsOfArrayOfSentenceArray));
+
+    }
+
+//    private static String[] sortNumberOfWords(String[] str)
+//    {
+//        String[] sortedString = new String[str.length];
+//
+//        int[] lenghtOfWords = new int[str.length];
+//
+//        for(int i = 0; i < lenghtOfWords.length; i++)
+//        {
+//            lenghtOfWords[i] = str[i].length();
+//            System.out.println(lenghtOfWords[i]);
+//        }
+//
+//        Arrays.sort(lenghtOfWords);
+//
+//
+//
+//        for(int i = 0; i < lenghtOfWords.length; i++)
+//        {
+//            for(int j = 0; j < str.length; j++)
+//            {
+//                if (lenghtOfWords[i] == str[j].length())
+//                {
+//                    sortedString[i] = str[j];
+//                    str[j] = "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+//                }
+//
+//            }
+//            System.out.println(sortedString[i]);
+//        }
+//
+//
+//        return sortedString;
+//    }
+
 
     private static String[] sortNumberOfSentence(String[] str, String text)
     {
@@ -86,7 +222,7 @@ public class Main {
 
 
 
-//Read more: https://javarevisited.blogspot.com/2015/09/how-to-read-file-into-string-in-java-7.html#ixzz6OxQnNVns
+
 
 
 
