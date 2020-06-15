@@ -7,7 +7,6 @@ class StringLengthComparator implements Comparator<String> { //Custom Comparator
     @Override
     public int compare(String str1, String str2)
     {
-
         return str1.length() - str2.length();// compare length of Strings
     }
 }

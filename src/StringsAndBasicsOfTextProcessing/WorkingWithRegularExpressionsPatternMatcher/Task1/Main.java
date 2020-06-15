@@ -12,6 +12,7 @@ import org.w3c.dom.ls.LSOutput;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.sql.Array;
 import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.regex.Matcher;
@@ -21,11 +22,6 @@ public class Main {
     public static void main(String[] args) throws IOException
     {
         String contents = new String(Files.readAllBytes(Paths.get("D:\\Epam_Task\\Introduction to Java\\src\\StringsAndBasicsOfTextProcessing\\WorkingWithRegularExpressionsPatternMatcher\\Task1\\text.txt")));
-
-       // System.out.println("---------------------------------------");
-
-
-
 
         // Сортировка Абзацев
 //        String[] newString;
@@ -44,14 +40,91 @@ public class Main {
         // Сортировка слов в предложении
         sortParagraphTheLenghtOfTheWordInSentence(contents);
 
+        // Доделать https://qna.habr.com/q/297784
+
+       //System.out.println(countOfSighn("1212","1"));
+      //  sortWordsInSentenceBySighn(contents);
 
 
     }
+
+    private static int countOfSighn(String str, String sighn) {
+        int count = 0;
+
+        Pattern p1 = Pattern.compile(sighn);
+        Matcher m1 = p1.matcher(str);
+
+        while (m1.find())
+        {
+            count++;
+        }
+        return count;
+    }
+
+    private static void sortWordsInSentenceBySighn(String text)
+    {
+
+        String string = text;
+
+        String sighn = "а";
+
+        string = string.replaceAll("[1234567890,—-]", "");
+
+        String[] stringArray = new String[30];
+        String[] stringArray2 = new String[100];
+        Matcher matcher = Pattern.compile("([^.!?]+[.!?])").matcher(string);
+
+        String textFinal = "";
+
+        int[] arrayOfCountOfSighn = new int[100];
+
+        while (matcher.find())
+        {
+            stringArray[0] = matcher.group();
+
+            stringArray2 = stringArray[0].split(" ");
+
+            stringArray2[0] = stringArray2[0].replaceAll("[.!?]", "");
+
+            for(int i = 0; i < stringArray2.length; i++)
+            {
+                arrayOfCountOfSighn[i] = countOfSighn(stringArray2[i],sighn);
+               // Arrays.sort(arrayOfCountOfSighn);
+               // System.out.println(stringArray2[i] + " " + arrayOfCountOfSighn[i]);
+            }
+
+            Arrays.sort(stringArray2,new StringLengthComparator());
+
+            for(int i = 0; i < stringArray2.length; i++)
+            {
+                if (arrayOfCountOfSighn[i] == stringArray2[i].length()) ;
+                System.out.println(stringArray2[i] + " " + arrayOfCountOfSighn[i]);
+              //  System.out.println(stringArray2[i] + " " + arrayOfCountOfSighn[i]);
+            }
+
+
+
+            //Arrays.sort(stringArray2,new StringLengthComparator());
+
+            textFinal += Arrays.toString(stringArray2);
+        }
+
+        //https://ru.stackoverflow.com/questions/103640/%D0%A3%D0%B4%D0%B0%D0%BB%D0%B8%D1%82%D1%8C-%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D1%8B-%D0%B2-java
+
+        textFinal = textFinal.replaceAll("[,.!?:;]", "");
+
+        //System.out.println(textFinal);
+
+    }
+
 
     private static void sortParagraphTheLenghtOfTheWordInSentence(String text)
     {
 
         String string = text;
+
+        string = string.replaceAll("[1234567890,—-]", "");
+
         String[] stringArray = new String[30];
         String[] stringArray2 = new String[10];
         Matcher matcher = Pattern.compile("([^.!?]+[.!?])").matcher(string);
@@ -60,23 +133,23 @@ public class Main {
 
         while (matcher.find())
         {
-            stringArray[0] = matcher.group(1);
+            stringArray[0] = matcher.group();
 
             stringArray2 = stringArray[0].split(" ");
 
+            stringArray2[0] = stringArray2[0].replaceAll("[.!?]", "");
+
             Arrays.sort(stringArray2,new StringLengthComparator());
 
-            System.out.println(Arrays.toString(stringArray2));
-
             textFinal += Arrays.toString(stringArray2);
-           // System.out.println(matcher.group(1));
         }
 
-        System.out.println("--------------------");
+        //https://ru.stackoverflow.com/questions/103640/%D0%A3%D0%B4%D0%B0%D0%BB%D0%B8%D1%82%D1%8C-%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D1%8B-%D0%B2-java
 
-        textFinal = textFinal.replaceAll(",","");
+        textFinal = textFinal.replaceAll("[,.!?:;]", "");
 
         System.out.println(textFinal);
+
     }
 
     private static void sortParagraphByTheLenghtOfTheWord(String text)
@@ -99,12 +172,8 @@ public class Main {
 
         for(int i = 0; i < arrayOfSentence.length; i++)
         {
-      //  wordsOfArrayOfSentence += arrayOfSentence[i];
-        }
 
-       // System.out.println(wordsOfArrayOfSentence);
-
-
+             }
 
         Pattern p1 = Pattern.compile("[а-юА-Юa-zA-Z\\s]");
         Matcher m1 = p1.matcher(arrayOfSentence[2]);
@@ -135,41 +204,6 @@ public class Main {
         System.out.println(Arrays.toString(wordsOfArrayOfSentenceArray));
 
     }
-
-//    private static String[] sortNumberOfWords(String[] str)
-//    {
-//        String[] sortedString = new String[str.length];
-//
-//        int[] lenghtOfWords = new int[str.length];
-//
-//        for(int i = 0; i < lenghtOfWords.length; i++)
-//        {
-//            lenghtOfWords[i] = str[i].length();
-//            System.out.println(lenghtOfWords[i]);
-//        }
-//
-//        Arrays.sort(lenghtOfWords);
-//
-//
-//
-//        for(int i = 0; i < lenghtOfWords.length; i++)
-//        {
-//            for(int j = 0; j < str.length; j++)
-//            {
-//                if (lenghtOfWords[i] == str[j].length())
-//                {
-//                    sortedString[i] = str[j];
-//                    str[j] = "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
-//                }
-//
-//            }
-//            System.out.println(sortedString[i]);
-//        }
-//
-//
-//        return sortedString;
-//    }
-
 
     private static String[] sortNumberOfSentence(String[] str, String text)
     {
