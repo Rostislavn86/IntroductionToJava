@@ -9,12 +9,15 @@ package StringsAndBasicsOfTextProcessing.WorkingWithRegularExpressionsPatternMat
 
 import org.w3c.dom.ls.LSOutput;
 
+import javax.xml.crypto.dsig.spec.XSLTTransformParameterSpec;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.Array;
 import java.sql.SQLOutput;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.function.DoubleToIntFunction;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -38,12 +41,12 @@ public class Main {
         //sortParagraphByTheLenghtOfTheWord(contents);
 
         // Сортировка слов в предложении
-        sortParagraphTheLenghtOfTheWordInSentence(contents);
+        //sortParagraphTheLenghtOfTheWordInSentence(contents);
 
         // Доделать https://qna.habr.com/q/297784
 
        //System.out.println(countOfSighn("1212","1"));
-      //  sortWordsInSentenceBySighn(contents);
+        sortWordsInSentenceBySighn(contents);
 
 
     }
@@ -61,59 +64,109 @@ public class Main {
         return count;
     }
 
+    private static String[] createNewString(String[] str,int[] place,String sighn)
+    {
+        String[] finalString = new String[str.length];
+
+        for(int i = place.length - 1; i > 0; i--)
+        {
+
+        }
+
+        return finalString;
+    }
+
+    private static String[] srtWordsByASimbol(String str, String sighn)
+    {
+        String[] finalString = str.split(" ");
+        int[] countSighn = new int[finalString.length];
+
+        for(int i = 0; i < finalString.length; i++)
+        {
+            countSighn[i] = countOfSighn(finalString[i],sighn);
+        }
+
+        Arrays.sort(countSighn);
+
+        for(int i = 0; i < finalString.length; i++)
+        System.out.println(countSighn[i]);
+
+        for(int i = 0; i < finalString.length; i++)
+        {
+           // System.out.println("stroka " + finalString[i] + " place " + countSighn[i] );
+            for(int j = 0; j < countSighn.length; j++)
+            if (countOfSighn(finalString[i],sighn) == countSighn[j])
+            {
+                System.out.println("countOfSighn(finalString[i],sighn) = " + countOfSighn(finalString[i],sighn)
+                        + " sorted string = " + finalString[i] + " countSighn[i] " + countSighn[j]);
+            }
+
+        }
+
+//        String[] stringArray = new String[30];
+//
+//        String textFinal = "";
+//
+//        Arrays.sort(finalString,new StringLengthComparator());
+//
+//        for(int i = 0; i < finalString.length; i++)
+//            System.out.println(finalString[i]);
+
+
+
+
+
+
+
+        return finalString;
+    }
+
     private static void sortWordsInSentenceBySighn(String text)
     {
-
         String string = text;
-
-        String sighn = "а";
 
         string = string.replaceAll("[1234567890,—-]", "");
 
-        String[] stringArray = new String[30];
-        String[] stringArray2 = new String[100];
-        Matcher matcher = Pattern.compile("([^.!?]+[.!?])").matcher(string);
+        System.out.println(string);
 
-        String textFinal = "";
+        int countofSentance = countOfSighn(string,"([^.!?]+[.!?])");
 
-        int[] arrayOfCountOfSighn = new int[100];
+        System.out.println(countofSentance);
 
-        while (matcher.find())
+        String[] stringsArray = new String[countofSentance];
+
+        stringsArray = string.split("[.!?]");
+
+        for(int i = 0; i <stringsArray.length; i++)
         {
-            stringArray[0] = matcher.group();
-
-            stringArray2 = stringArray[0].split(" ");
-
-            stringArray2[0] = stringArray2[0].replaceAll("[.!?]", "");
-
-            for(int i = 0; i < stringArray2.length; i++)
-            {
-                arrayOfCountOfSighn[i] = countOfSighn(stringArray2[i],sighn);
-               // Arrays.sort(arrayOfCountOfSighn);
-               // System.out.println(stringArray2[i] + " " + arrayOfCountOfSighn[i]);
-            }
-
-            Arrays.sort(stringArray2,new StringLengthComparator());
-
-            for(int i = 0; i < stringArray2.length; i++)
-            {
-                if (arrayOfCountOfSighn[i] == stringArray2[i].length()) ;
-                System.out.println(stringArray2[i] + " " + arrayOfCountOfSighn[i]);
-              //  System.out.println(stringArray2[i] + " " + arrayOfCountOfSighn[i]);
-            }
-
-
-
-            //Arrays.sort(stringArray2,new StringLengthComparator());
-
-            textFinal += Arrays.toString(stringArray2);
+            System.out.println(i + " : " +  stringsArray[i]);
         }
 
-        //https://ru.stackoverflow.com/questions/103640/%D0%A3%D0%B4%D0%B0%D0%BB%D0%B8%D1%82%D1%8C-%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D1%8B-%D0%B2-java
+//        Arrays.sort(stringsArray,new StringLengthComparator());
+//
+//        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!");
+//
+//        for(int i = 0; i <stringsArray.length; i++)
+//        {
+//            System.out.println(i + " : " +  stringsArray[i]);
+//        }
 
-        textFinal = textFinal.replaceAll("[,.!?:;]", "");
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!");
 
-        //System.out.println(textFinal);
+        srtWordsByASimbol(stringsArray[0],"а");
+
+
+        for(int i = 0; i <stringsArray.length; i++)
+        {
+
+           // System.out.println(i + " : " +  stringsArray[i]);
+        }
+
+
+
+
+
+
 
     }
 
