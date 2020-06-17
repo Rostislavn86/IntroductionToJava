@@ -46,6 +46,8 @@ public class Main {
         // Доделать https://qna.habr.com/q/297784
 
        //System.out.println(countOfSighn("1212","1"));
+
+        //Сделать через паттерн и матчер
         sortWordsInSentenceBySighn(contents);
 
 
@@ -127,7 +129,7 @@ public class Main {
 
         string = string.replaceAll("[1234567890,—-]", "");
 
-        System.out.println(string);
+        //System.out.println(string);
 
         int countofSentance = countOfSighn(string,"([^.!?]+[.!?])");
 
@@ -137,30 +139,27 @@ public class Main {
 
         stringsArray = string.split("[.!?]");
 
-        for(int i = 0; i <stringsArray.length; i++)
-        {
-            System.out.println(i + " : " +  stringsArray[i]);
-        }
-
-//        Arrays.sort(stringsArray,new StringLengthComparator());
-//
-//        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!");
-//
 //        for(int i = 0; i <stringsArray.length; i++)
 //        {
 //            System.out.println(i + " : " +  stringsArray[i]);
 //        }
 
+
+
         System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!");
 
-        srtWordsByASimbol(stringsArray[0],"а");
+        Arrays.sort(stringsArray,new StringLengthComparator());
 
+        //srtWordsByASimbol(stringsArray[0],"а");
 
+        System.out.println("Сортировка по длинне  предложения : ");
         for(int i = 0; i <stringsArray.length; i++)
         {
-
+            System.out.println(stringsArray[i]);
            // System.out.println(i + " : " +  stringsArray[i]);
         }
+
+
 
 
 
@@ -196,6 +195,7 @@ public class Main {
 
             textFinal += Arrays.toString(stringArray2);
         }
+
 
         //https://ru.stackoverflow.com/questions/103640/%D0%A3%D0%B4%D0%B0%D0%BB%D0%B8%D1%82%D1%8C-%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D1%8B-%D0%B2-java
 
