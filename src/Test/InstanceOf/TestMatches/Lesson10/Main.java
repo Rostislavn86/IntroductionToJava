@@ -16,5 +16,15 @@ public class Main
         }
         System.out.println();
 
+
+        Pattern p2 = Pattern.compile("[0-555](Value)?");// ? означает что группа value может как присутсвовать так и отсутсвовать
+        Matcher m2 = p2.matcher("100Set or 55SetValue");
+
+        while (m2.find())
+        {
+            System.out.println(m2.start() + " " + m2.group() + " " + " ");
+        }
+        System.out.println();
+
     }
 }

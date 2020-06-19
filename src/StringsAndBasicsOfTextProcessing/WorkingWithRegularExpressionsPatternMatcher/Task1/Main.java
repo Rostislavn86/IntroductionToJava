@@ -47,7 +47,7 @@ public class Main {
 
        //System.out.println(countOfSighn("1212","1"));
 
-        //Сделать через паттерн и матчер
+        //Создать метод сортировки по алфавиту, с помощью монепуляий с массивом строк i+1
         sortWordsInSentenceBySighn(contents);
 
 
@@ -78,6 +78,13 @@ public class Main {
         return finalString;
     }
 
+    private static String[] createAndSortWordsByAcountOfTheWord(String str)
+    {
+        String[] strArray = str.split(" ");
+        Arrays.sort(strArray);
+        return strArray;
+    }
+
     private static String[] srtWordsByASimbol(String str, String sighn)
     {
         String[] finalString = str.split(" ");
@@ -86,39 +93,25 @@ public class Main {
         for(int i = 0; i < finalString.length; i++)
         {
             countSighn[i] = countOfSighn(finalString[i],sighn);
+            System.out.println(countSighn[i]);
         }
 
-        Arrays.sort(countSighn);
+        String[] finalStringWithAPlaces = new  String[finalString.length];
 
-        for(int i = 0; i < finalString.length; i++)
-        System.out.println(countSighn[i]);
-
-        for(int i = 0; i < finalString.length; i++)
+        for(int i = 0; i < finalStringWithAPlaces.length; i++)
         {
-           // System.out.println("stroka " + finalString[i] + " place " + countSighn[i] );
-            for(int j = 0; j < countSighn.length; j++)
-            if (countOfSighn(finalString[i],sighn) == countSighn[j])
-            {
-                System.out.println("countOfSighn(finalString[i],sighn) = " + countOfSighn(finalString[i],sighn)
-                        + " sorted string = " + finalString[i] + " countSighn[i] " + countSighn[j]);
-            }
-
+            finalStringWithAPlaces[i] = String.valueOf(countSighn[i]) + finalString[i];
+            System.out.println(finalStringWithAPlaces[i]);
         }
 
-//        String[] stringArray = new String[30];
-//
-//        String textFinal = "";
-//
-//        Arrays.sort(finalString,new StringLengthComparator());
-//
-//        for(int i = 0; i < finalString.length; i++)
-//            System.out.println(finalString[i]);
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!");
 
+        Arrays.sort(finalStringWithAPlaces);
 
-
-
-
-
+        for(int i = 0; i < finalStringWithAPlaces.length; i++)
+        {
+            System.out.println(finalStringWithAPlaces[i]);
+        }
 
         return finalString;
     }
@@ -148,16 +141,16 @@ public class Main {
 
         System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!");
 
-        Arrays.sort(stringsArray,new StringLengthComparator());
+       // Arrays.sort(stringsArray,new StringLengthComparator());
 
-        //srtWordsByASimbol(stringsArray[0],"а");
+        srtWordsByASimbol(stringsArray[0],"а");
 
-        System.out.println("Сортировка по длинне  предложения : ");
-        for(int i = 0; i <stringsArray.length; i++)
-        {
-            System.out.println(stringsArray[i]);
-           // System.out.println(i + " : " +  stringsArray[i]);
-        }
+//        System.out.println("Сортировка по длинне  предложения : ");
+//        for(int i = 0; i <stringsArray.length; i++)
+//        {
+//            System.out.println(stringsArray[i]);
+//           // System.out.println(i + " : " +  stringsArray[i]);
+//        }
 
 
 
