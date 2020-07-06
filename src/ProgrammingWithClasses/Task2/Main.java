@@ -5,8 +5,6 @@ package ProgrammingWithClasses.Task2;
 // Добавьте конструктор, инициализирующий члены класса по умолчанию.
 // Добавьте set- и get- методы для полей экземпляра класса.
 
-
-
 public class Main
 {
     public static void main(String[] args)
