@@ -1,5 +1,7 @@
 package ProgrammingWithClasses.Task4;
 
+import javax.swing.*;
+
 public class Train
 {
     private String nameOfThDistanation;
@@ -24,6 +26,8 @@ public class Train
         this.departureTimeMin = departureTimeMin;
     }
 
+    public String getNameOfThDistanation() {return nameOfThDistanation;}
+
     public int getDepartureTimeHour()
     {
         return departureTimeHour;
@@ -32,6 +36,18 @@ public class Train
     public int getNumberOfTheTrain()
     {
         return numberOfTheTrain;
+    }
+
+    public void getAllInfarmation()
+    {
+        System.out.println("Пункт назначения " + nameOfThDistanation
+                + " номер поезда "
+                + numberOfTheTrain
+                + " время приезда "
+                + departureTimeHour
+                + " часов "
+                + departureTimeMin
+                + " мунут ");
     }
 
 }
