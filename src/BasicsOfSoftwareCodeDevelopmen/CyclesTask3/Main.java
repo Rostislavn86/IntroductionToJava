@@ -12,8 +12,6 @@ public class Main
         {
             summ += Math.pow(i,2);
         }
-
         System.out.println("Cумма квадратов первых ста чисел = " + summ);
-
     }
 }

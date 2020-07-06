@@ -1,4 +1,4 @@
-package ProgrammingWithClasses.Taks3;
+package ProgrammingWithClasses.Task3;
 
 //3. Создайте класс с именем Student, содержащий поля: фамилия и инициалы,
 // номер группы, успеваемость (массив из пяти элементов).

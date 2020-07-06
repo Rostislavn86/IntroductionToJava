@@ -1,4 +1,4 @@
-package ProgrammingWithClasses.Taks3;
+package ProgrammingWithClasses.Task3;
 
 public class Students {
     private String nameOfTheStudent;
