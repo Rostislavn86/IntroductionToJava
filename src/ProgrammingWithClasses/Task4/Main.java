@@ -1,7 +1,12 @@
 package ProgrammingWithClasses.Task4;
 
+//https://javarush.ru/groups/posts/1885-metod-compareto
+
+import TestComporator.User;
+
 import java.sql.SQLOutput;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main
@@ -10,8 +15,8 @@ public class Main
     {
         Train[] train = new Train[5];
 
-        train[0] = new Train("Минск",123,58,43);
-        train[1] = new Train("Москва",121,21,44);
+        train[0] = new Train("Минск",123,14,43);
+        train[1] = new Train("Минск",121,12,44);
         train[2] = new Train("Киев",129,1,45);
         train[3] = new Train("Борисов",136,15,59);
         train[4] = new Train("Витебск",135,22,0);
@@ -54,18 +59,50 @@ public class Main
 //            if (numberOfTheTrain == train[i].getNumberOfTheTrain()) train[i].getAllInfarmation();
 //        }
 
+        // Мой метод
 
-        String[] nameOfTheTrainArray = new String[train.length];
 
-        for(int i = 0; i < train.length; i++)
-        {
-            nameOfTheTrainArray[i] = train[i].getNameOfThDistanation();
+//        String[] nameOfTheTrainArray = new String[train.length];
+//
+//        for(int i = 0; i < train.length; i++)
+//        {
+//            nameOfTheTrainArray[i] = train[i].getNameOfThDistanation();
+//        }
+//
+//        Arrays.sort(nameOfTheTrainArray);
+//
+//        System.out.println(Arrays.toString(nameOfTheTrainArray));
+//
+//        int count = 0;
+//
+//        for(int i = 0; i < nameOfTheTrainArray.length; i++)
+//        {
+//
+//            for(int j = 0; j < nameOfTheTrainArray.length; j++)
+//            {
+//                if(nameOfTheTrainArray[i].equals(train[j].getNameOfThDistanation()))
+//                {
+//                    train[j].getAllInfarmation();
+//
+//
+//                }
+//
+//            }
+//
+//            count++;
+//            if (count == nameOfTheTrainArray.length - 1) break;
+//        }
+
+        System.out.println("-------до сортировки--------");
+        for (Train u : train) {
+            System.out.println(u.toString());
         }
 
-        Arrays.sort(nameOfTheTrainArray);
-
-        System.out.println(Arrays.toString(nameOfTheTrainArray));
-
+        System.out.println("-------после сортировки-----");
+        Arrays.sort(train);
+        for (Train u : train) {
+            System.out.println(u.toString());
+        }
 
 
 
