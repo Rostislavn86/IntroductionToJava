@@ -2,11 +2,18 @@ package ProgrammingWithClasses.Task4;
 
 //https://javarush.ru/groups/posts/1885-metod-compareto
 
-import TestComporator.User;
+//4. Создайте класс Train, содержащий поля: название пункта назначения,
+// номер поезда, время отправления.
+// Создайте данные в массив из пяти элементов типа Train,
+// добавьте возможность сортировки элементов массива по номерам поездов.
+// Добавьте возможность вывода информации о поезде, номер которого введен пользователем.
+// Добавьте возможность сортировки массив по пункту назначения,
+// причем поезда с одинаковыми пунктами назначения должны быть упорядочены
+// по времени отправления.
 
-import java.sql.SQLOutput;
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class Main
@@ -21,9 +28,9 @@ public class Main
         train[3] = new Train("Борисов",136,15,59);
         train[4] = new Train("Витебск",135,22,0);
 
-        System.out.println(train[0].getDepartureTimeHour());
-
         int[] numberOfTheTrainArray = new int[train.length];
+
+        //        Часть 1
 
         for(int i = 0; i < train.length; i++)
         {
@@ -32,66 +39,46 @@ public class Main
 
         Arrays.sort(numberOfTheTrainArray);
 
-        System.out.println(Arrays.toString(numberOfTheTrainArray));
+        System.out.println("Отсортированный массив по номерам поездов ");
 
         for(int i = 0; i < train.length; i++)
         {
             for(int j = 0; j < numberOfTheTrainArray.length; j++)
             {
-            if (train[i].getNumberOfTheTrain() == numberOfTheTrainArray[j]) System.out.println(train[j].getNumberOfTheTrain());
+            if (train[i].getNumberOfTheTrain() == numberOfTheTrainArray[j])
+                System.out.println(train[j].toString());
             }
         }
 
-//        Часть 2
-//
-//        System.out.println("Введите номер поезда из списка : ");
-//
-//        for(int i = 0; i < train.length; i++)
-//        {
-//            System.out.println(train[0].getNumberOfTheTrain());
-//        }
-//
-//        Scanner scan = new Scanner(System.in);
-//        int numberOfTheTrain = scan.nextInt();
-//
-//        for(int i = 0; i < train.length; i++)
-//        {
-//            if (numberOfTheTrain == train[i].getNumberOfTheTrain()) train[i].getAllInfarmation();
-//        }
+        //        Часть 2
 
-        // Мой метод
+        System.out.println();
+        System.out.println("Вывод информации о поезде, номер которого введен пользователем. ");
+        System.out.println("Введите номер поезда из списка : ");
 
+        for(int i = 0; i < train.length; i++)
+        {
+            System.out.println(train[i].getNumberOfTheTrain());
+        }
 
-//        String[] nameOfTheTrainArray = new String[train.length];
-//
-//        for(int i = 0; i < train.length; i++)
-//        {
-//            nameOfTheTrainArray[i] = train[i].getNameOfThDistanation();
-//        }
-//
-//        Arrays.sort(nameOfTheTrainArray);
-//
-//        System.out.println(Arrays.toString(nameOfTheTrainArray));
-//
-//        int count = 0;
-//
-//        for(int i = 0; i < nameOfTheTrainArray.length; i++)
-//        {
-//
-//            for(int j = 0; j < nameOfTheTrainArray.length; j++)
-//            {
-//                if(nameOfTheTrainArray[i].equals(train[j].getNameOfThDistanation()))
-//                {
-//                    train[j].getAllInfarmation();
-//
-//
-//                }
-//
-//            }
-//
-//            count++;
-//            if (count == nameOfTheTrainArray.length - 1) break;
-//        }
+        Scanner scan = new Scanner(System.in);
+        int numberOfTheTrain = scan.nextInt();
+
+        for(int i = 0; i < train.length; i++)
+        {
+            if (numberOfTheTrain == train[i].getNumberOfTheTrain())
+            {
+                System.out.println(train[i].toString());
+                break;
+            }
+        }
+
+        //        Часть 3
+
+        System.out.println();
+        System.out.println("Отсортированный массив по пункту назначения, " +
+                "причем поезда с одинаковыми пунктами назначения должны быть " +
+                "упорядочены по времени отправления. ");
 
         System.out.println("-------до сортировки--------");
         for (Train u : train) {
@@ -103,9 +90,5 @@ public class Main
         for (Train u : train) {
             System.out.println(u.toString());
         }
-
-
-
-
     }
 }

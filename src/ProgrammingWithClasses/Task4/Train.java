@@ -1,9 +1,5 @@
 package ProgrammingWithClasses.Task4;
 
-import TestComporator.User;
-
-import javax.swing.*;
-
 public class Train implements Comparable <Train>
 {
     private String nameOfThDistanation;
@@ -40,18 +36,6 @@ public class Train implements Comparable <Train>
         return numberOfTheTrain;
     }
 
-    public void getAllInfarmation()
-    {
-        System.out.println("Пункт назначения " + nameOfThDistanation
-                + " номер поезда "
-                + numberOfTheTrain
-                + " время приезда "
-                + departureTimeHour
-                + " часов "
-                + departureTimeMin
-                + " мунут ");
-    }
-
     public void sortByPlaceAndTime(String[] place)
     {
         for(int  i = 0; i < place.length; i++)
@@ -59,24 +43,6 @@ public class Train implements Comparable <Train>
 
         }
     }
-
-//    @Override
-////реализуем метод compareTo интерфейса Comparable
-//    public int compareTo(User o)
-//    {
-//
-////используем метод compareTo из класса String для сравнения имен
-//        int result = this.nameOfThDistanation.compareTo(o.nameOfThDistanation);
-//
-////если имена одинаковые -  сравниваем возраст,
-//        //       используя метод compareTo из класса Integer
-//
-//        if (result == 0)
-//        {
-//            result = this.departureTimeHour.compareTo(o.departureTimeHour);
-//        }
-//        return result;
-//    }
 
     @Override
     public int compareTo(Train o) {
@@ -98,10 +64,9 @@ public class Train implements Comparable <Train>
 
     @Override
     public String toString() {
-        return "{" +
-                "nameOfThDistanation='" + nameOfThDistanation + '\'' +
-                ", departureTimeHour=" + departureTimeHour +
-                ", departureTimeMin='" + departureTimeMin + '\'' +
-                '}';
+        return "Станция назначения : " + nameOfThDistanation + '\''
+                + " Номер поезда : " + numberOfTheTrain +
+                " Время прибытия (часы) : " + departureTimeHour +
+                ", Время прибытия (минуты) : " + departureTimeMin ;
     }
 }
