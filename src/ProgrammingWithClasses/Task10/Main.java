@@ -23,6 +23,13 @@ public class Main
         methods.airplane[3] = new Airplane("Минск",4787,"Пассажирский",13,47,"Wednesday");
         methods.airplane[4] = new Airplane("Вильнюс",4444,"Грузовой",35,88,"Monday");
 
+        System.out.println("a) список рейсов для заданного пункта назначения : ");
+        methods.listOfFlightsOfAGivenDestination();
+
+        System.out.println("b) список рейсов для заданного дня недели :");
         methods.listofFlightsOfAGivenDayOfTheWeek();
+
+        System.out.println("c) список рейсов для заданного дня недели, время вылета для которых больше заданного :");
+        methods.listofFlightsOfAGivenDayOfTheWeekAndTime();
     }
 }
