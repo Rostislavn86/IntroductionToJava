@@ -7,6 +7,7 @@ public class Main
 {
     public static void main(String[] args)
     {
+    String nameOfTheState = "Republic of Belarus";
     String[] region = {"Minsk State","Gomel State","Grodno State","Mogiliov State","Brest State", "Vitebsk State"};
     int[] distrSquare = {1230,2000,1500,1200,4100,3600};
     String[] town = {"Minsk","Gomel","Grodno","Mogiliov","Brest","Vitebsk"};
@@ -35,12 +36,12 @@ public class Main
     District districtVitebsk = new District(distrSquare[5]);
     Towm towmVitebsk = new Towm(town[5]);
 
-    State stateMinsk = new State("Republic of Belarus",nameRegMinsk,districtMinsk,towmMinsk);
-    State stateGomel = new State("Republic of Belarus",nameRegGomel,districtGomel,towmGomel);
-    State stateGrodno = new State("Republic of Belarus",nameRegGrodno,districtGrodno,towmGrodno);
-    State stateMogiliov = new State("Republic of Belarus",nameRegMogiliov,districtMogiliov,towmMogiliov);
-    State stateBrest = new State("Republic of Belarus",nameRegBrest,districtBrest,towmBrest);
-    State stateVitebsk = new State("Republic of Belarus",nameRegVitebsk,districtVitebsk,towmVitebsk);
+    State stateMinsk = new State(nameOfTheState,nameRegMinsk,districtMinsk,towmMinsk);
+    State stateGomel = new State(nameOfTheState,nameRegGomel,districtGomel,towmGomel);
+    State stateGrodno = new State(nameOfTheState,nameRegGrodno,districtGrodno,towmGrodno);
+    State stateMogiliov = new State(nameOfTheState,nameRegMogiliov,districtMogiliov,towmMogiliov);
+    State stateBrest = new State(nameOfTheState,nameRegBrest,districtBrest,towmBrest);
+    State stateVitebsk = new State(nameOfTheState,nameRegVitebsk,districtVitebsk,towmVitebsk);
 
     System.out.println("Столица региона это " + stateMinsk.getCity().getNameTowm());
 
