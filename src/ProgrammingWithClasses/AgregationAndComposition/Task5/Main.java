@@ -6,6 +6,7 @@ package ProgrammingWithClasses.AgregationAndComposition.Task5;
 // Учитывать возможность выбора транспорта, питания и числа дней.
 // Реализовать выбор и сортировку путевок.
 
+//Сделать как композицию
 import java.util.Scanner;
 
 //Попробовать доделать через сравнение строк, через toString
@@ -14,6 +15,7 @@ public class Main
 {
     public static void main(String[] args)
     {
+        Methods methods = new Methods();
         //Сформируем путёвки по каждому типу отдаха
 
         TypeOfTravel typeOfTravelRest = new TypeOfTravel(new Rest());
@@ -22,11 +24,23 @@ public class Main
         TypeOfTravel typeOfTravelShoping = new TypeOfTravel(new Shoping());
         TypeOfTravel typeOfTravelTreatment = new TypeOfTravel(new Treatment());
 
-        System.out.println(typeOfTravelRest.rest.getTransport());
-        System.out.println(typeOfTravelCruise.cruise.getTransport());
-        System.out.println(typeOfTravelExcursions.excursions.getTransport());
-        System.out.println(typeOfTravelShoping.shoping.getTransport());
-        System.out.println(typeOfTravelTreatment.treatment.getTransport());
+        methods.allVauchers[0] = typeOfTravelRest;
+        methods.allVauchers[1] = typeOfTravelRest;
+        methods.allVauchers[2] = typeOfTravelRest;
+        methods.allVauchers[3] = typeOfTravelRest;
+        methods.allVauchers[4] = typeOfTravelRest;
+
+        methods.chooseTr(methods.allVauchers);
+//
+//        System.out.println(typeOfTravelRest.rest.getTransport());
+//        System.out.println(typeOfTravelCruise.cruise.getTransport());
+//        System.out.println(typeOfTravelExcursions.excursions.getTransport());
+//        System.out.println(typeOfTravelShoping.shoping.getTransport());
+//        System.out.println(typeOfTravelTreatment.treatment.getTransport());
+
+
+
+        System.out.println(typeOfTravelRest.toString());
 
         //
         //
@@ -70,7 +84,7 @@ public class Main
     public static String chooseTr(String[] trArray)
     {
         System.out.println("Список доступного транспорта на выбор : ");
-        for(int i = 0; i <trArray.length; i++)
+        for(int i = 0; i < trArray.length; i++)
         {
             System.out.println(trArray[i]);
         }

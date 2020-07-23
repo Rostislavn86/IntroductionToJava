@@ -5,7 +5,8 @@ public class Person {
     //используем отношение has-a
     private Job job;
 
-    public Person(){
+    public Person()
+    {
         this.job=new Job();
         job.setSalary(1000L);
     }

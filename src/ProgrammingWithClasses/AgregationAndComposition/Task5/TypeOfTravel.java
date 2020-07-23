@@ -5,8 +5,8 @@ public class TypeOfTravel
     Rest rest;
     Excursions excursions;
     Treatment treatment;
-    Shoping shoping;;
-    Cruise cruise;;
+    Shoping shoping;
+    Cruise cruise;
 
     TypeOfTravel(Rest rest)
     {
