@@ -2,14 +2,9 @@ package ProgrammingWithClasses.AgregationAndComposition.Task5;
 
 public class Rest
 {
-    String transport = "Электричка";
+    String transport = "Автобус";
     String food = "За свой счёт";
     int day = 1;
-
-    Rest()
-    {
-
-    }
 
     public String getTransport() {
         return transport;

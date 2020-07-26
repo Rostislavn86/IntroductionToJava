@@ -6,11 +6,6 @@ public class Excursions
     String food = "Обед";
     int day = 2;
 
-    Excursions()
-    {
-
-    }
-
     public String getTransport() {
         return transport;
     }

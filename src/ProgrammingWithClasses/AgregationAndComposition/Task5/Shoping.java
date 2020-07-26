@@ -6,11 +6,6 @@ public class Shoping
     String food = "За свой счёт";
     int day = 1;
 
-    Shoping()
-    {
-
-    }
-
     public String getTransport() {
         return transport;
     }

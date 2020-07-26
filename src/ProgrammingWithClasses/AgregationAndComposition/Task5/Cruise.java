@@ -6,11 +6,6 @@ public class Cruise
     String food = "Всё включено";
     int day = 30;
 
-    Cruise()
-    {
-
-    }
-
     public String getTransport() {
         return transport;
     }

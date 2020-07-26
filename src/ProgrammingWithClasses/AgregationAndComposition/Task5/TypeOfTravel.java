@@ -1,68 +1,63 @@
 package ProgrammingWithClasses.AgregationAndComposition.Task5;
 
-public class TypeOfTravel
-{
-    Rest rest;
-    Excursions excursions;
-    Treatment treatment;
-    Shoping shoping;
-    Cruise cruise;
+//5. Туристические путевки.
+// Сформировать набор предложений клиенту по выбору туристической путевки различного типа
+// (отдых, экскурсии, лечение, шопинг, круиз и т. д.) для оптимального выбора.
+// Учитывать возможность выбора транспорта, питания и числа дней.
+// Реализовать выбор и сортировку путевок.
 
-    TypeOfTravel(Rest rest)
+public class TypeOfTravel {
+
+    //используем отношение has-a
+    private Rest rest;
+    private Shoping shoping;
+    private Cruise cruise;
+    private Excursions excursions;
+
+    public TypeOfTravel()
     {
-    this.rest = rest;
+        this.rest = new Rest();
+        this.shoping = new Shoping();
+        this.cruise = new Cruise();
+        this.excursions = new Excursions();
     }
 
-    TypeOfTravel(Cruise cruise)
+    public String[] getTransport()
     {
-        this.cruise = cruise;
+        String tr = rest.getTransport() + "!" + shoping.getTransport()
+                + "!" + cruise.getTransport()
+                + "!" + excursions.getTransport();
+        String[] trArray = tr.split("!");
+        return trArray;
     }
 
-    TypeOfTravel(Excursions excursions)
+    public String[] getFood()
     {
-        this.excursions = excursions;
+        String tr = rest.getFood() + "!" + shoping.getFood()
+                + "!" + cruise.getFood()
+                + "!" + excursions.getFood();
+        String[] trArray = tr.split("!");
+        return trArray;
     }
 
-    TypeOfTravel(Shoping shoping)
+    public String[] getDay()
     {
-        this.shoping = shoping;
+        String tr = rest.getDay() + "!" + shoping.getDay()
+                + "!" + cruise.getDay()
+                + "!" + excursions.getDay();
+        String[] trArray = tr.split("!");
+        return trArray;
     }
 
-    TypeOfTravel(Treatment treatment)
+    public String[] toStringArrayVacation()
     {
-        this.treatment = treatment;
+        String travelString = rest.toString()
+        + "!" + shoping.toString()
+        + "!" + cruise.toString()
+        + "!" + excursions.toString();
+
+        String[] travelStringArray = travelString.split("!");
+        return  travelStringArray;
     }
 
-
-    public Rest getRest() {
-        return rest;
-    }
-
-    public Excursions getExcursions() {
-        return excursions;
-    }
-
-    public Treatment getTreatment() {
-        return treatment;
-    }
-
-    public Shoping getShoping() {
-        return shoping;
-    }
-
-    public Cruise getCruise() {
-        return cruise;
-    }
-
-    @Override
-    public String toString()
-    {
-        return "TypeOfTravel{" +
-                "rest=" + rest +
-                ", excursions=" + excursions +
-                ", treatment=" + treatment +
-                ", shoping=" + shoping +
-                ", cruise=" + cruise +
-                '}';
-    }
 }
