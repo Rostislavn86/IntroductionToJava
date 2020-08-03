@@ -1,6 +1,11 @@
 package BasicOfOOP.Task1;
 
-public class TextFile
+public class TextFile extends FileUser
 {
 
+    public TextFile()
+    {
+        super();
+        System.out.println("TextFile");
+    }
 }
