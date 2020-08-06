@@ -6,6 +6,5 @@ public class TextFile extends FileUser
     public TextFile()
     {
         super();
-        System.out.println("TextFile");
     }
 }

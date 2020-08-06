@@ -7,8 +7,6 @@ public class FileUser extends Directory
     public FileUser()
     {
         super();
-        this.fileName = "Default.txt";
-        System.out.println("FileUser");
     }
 
     public String getFileName() {

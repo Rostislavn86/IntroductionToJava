@@ -7,7 +7,6 @@ public class Directory
     public Directory()
     {
         this.diretoryNameDefault = "D:\\Epam_Task\\IntroductionToJava\\src\\BasicOfOOP\\Task1";
-        System.out.println("Directory");
     }
 
     public String getDiretoryNameDefault() {
