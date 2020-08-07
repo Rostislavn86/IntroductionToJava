@@ -9,19 +9,10 @@ public class Main
 {
     public static void main(String[] args)
     {
-    int count = 5;
+    int count = 2;
 
     Payment payment = new Payment(count);
 
-        System.out.println(payment.toString());
-
-//    Payment payment1 = new Payment("Бензопила MS180",520);
-//    Payment payment2 = new Payment("Бензопила MS210",820);
-//    Payment payment3 = new Payment("Триммер FS55",580);
-//
-//    System.out.println(payment1.toString());
-//    System.out.println(payment2.toString());
-//    System.out.println(payment3.toString());
-
+    System.out.println(payment.toString());
     }
 }

@@ -1,5 +1,7 @@
 package BasicOfOOP.Task2;
 
+import java.util.Scanner;
+
 public class Payment
 {
 
@@ -12,21 +14,19 @@ public class Payment
     for(int i = 0; i < c; i++)
     {
     Product product = new Product();
-    this.nameOfThePayment += product.nameOfTheProduct + " ";
+    this.nameOfThePayment += product.nameOfTheProduct + ",";
     this.countOfThePayment += product.countOfTheProduct;
-    this.priceOfPayment += product.priceOfProduct;
-    //System.out.println(product.toString());
+    this.priceOfPayment += product.priceOfProduct * product.countOfTheProduct;
     }
 
     }
 
     @Override
     public String toString() {
-        return "Payment{" +
-                "nameOfThePayment='" + nameOfThePayment + '\'' +
-                ", countOfThePayment=" + countOfThePayment +
-                ", priceOfPayment=" + priceOfPayment +
-                '}';
+        if (nameOfThePayment.contains("null")) nameOfThePayment = nameOfThePayment.replace("null","");
+        return  "Список заказываемых товаров : " + nameOfThePayment + '\'' +
+                ", общее количество заказываемых товаров : " + countOfThePayment +
+                ", общая сумма заказываемых товаров : " + priceOfPayment;
     }
 
     public void setNameOfThePayment(String nameOfThePayment) {
@@ -50,7 +50,23 @@ public class Payment
         Product()
         {
             System.out.println("Введите название продкта : ");
-            setNameOfTheProduct("1");
+
+            Scanner sc = new Scanner(System.in);
+            String str = sc.nextLine();
+
+            setNameOfTheProduct(str);
+
+            System.out.println("Введите количество едениц продукта : ");
+
+            int strCount = sc.nextInt();
+
+            setCountOfTheProduct(strCount);
+
+            System.out.println("Введите цену за еденицу продукта : ");
+
+            int strCountPrice = sc.nextInt();
+
+            setPriceOfProduct(strCountPrice);
         }
 
         public String getNameOfTheProduct()
