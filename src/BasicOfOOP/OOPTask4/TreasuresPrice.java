@@ -1,6 +1,6 @@
 package BasicOfOOP.OOPTask4;
 
-class Treasures
+class TreasuresPrice
 {
     final int numberOfTreasures = 100;
 
@@ -14,16 +14,6 @@ class Treasures
 
     final int priceOfAmetist = 50;
     final  int priceOfDiamond = 100;
-
-
-
-
-
-    public Treasures()
-    {
-
-
-    }
 
     public int getNumberOfTreasures()
     {

@@ -1,135 +1,111 @@
 package BasicOfOOP.OOPTask4;
 
-import BasicOfOOP.OOPTask4.TypeOfMetal.*;
-import BasicOfOOP.OOPTask4.TypeOfPreciousStone.*;
+import java.awt.font.TextHitInfo;
 
-public class Chest extends Treasures implements Gold, Silver, Bronze, Amethist, Diamond
+public class Chest
 {
-    String name;
+    public String getNamberOfTheChest;
 
-    int numberOfGoldCoinsOfChest;
-    int numberOfSilverCoinsOfChest;
-    int numberOfBronzeCoinsOfChest;
+    int numberOfGoldCoins;
+    int numberOfSilverCoins;
+    int numberOfBronzeCoins;
 
-    int numberOfGoldCupsOfChest;
-    int numberOfSilverCupsOfChest;
-    int numberOfBronzeCupsOfChest;
+    int numberOfGoldCups;
+    int numberOfSilverCups;
+    int numberOfBronzeCups;
 
-    int numberOfAmetistPreciousStonesOfChest;
-    int numberOfDiamondPreciousStonesOfChest;
+    int numberOfAmetistPreciousStones;
+    int numberOfDiamondPreciousStones;
+
+    int totalChestPrice;
 
     public Chest(String name)
     {
-        this.name = "Сундук номер " + name;
+        this.getNamberOfTheChest = "Сундук номер " + name;
+
+        this.numberOfGoldCoins = getNumberOfGoldCoins();
+        this.numberOfSilverCoins = getNumberOfSilverCoins();
+        this.numberOfBronzeCoins = getNumberOfBronzeCoins();
+
+        this.numberOfGoldCups = getNumberOfGoldCups();
+        this.numberOfSilverCups = getNumberOfSilverCups();
+        this.numberOfBronzeCups = getNumberOfBronzeCups();
+
+        this.numberOfAmetistPreciousStones = getNumberOfAmetistPreciousStones();
+        this.numberOfDiamondPreciousStones = getNumberOfDiamondPreciousStones();
     }
 
-    public String getName() {
-        return name;
+    public Chest()
+    {
+
     }
 
-    public int getNumberOfGoldCoinsOfChest() {
-        return numberOfGoldCoinsOfChest;
+    public String getNamberOfTheChest()
+    {
+        int count = 0;
+        return getNamberOfTheChest;
     }
 
-    public void setNumberOfGoldCoinsOfChest(int numberOfGoldCoinsOfChest) {
-        this.numberOfGoldCoinsOfChest = numberOfGoldCoinsOfChest;
+    public int getNumberOfGoldCoins()
+    {
+        return numberOfGoldCoins = new Methods().generateCoins();
     }
 
-    public int getNumberOfSilverCoinsOfChest() {
-        return numberOfSilverCoinsOfChest;
+    public int getNumberOfSilverCoins() {
+        return numberOfSilverCoins = new Methods().generateCoins();
     }
 
-    public void setNumberOfSilverCoinsOfChest(int numberOfSilverCoinsOfChest) {
-        this.numberOfSilverCoinsOfChest = numberOfSilverCoinsOfChest;
+    public int getNumberOfBronzeCoins() {
+        return numberOfBronzeCoins = new Methods().generateCoins();
     }
 
-    public int getNumberOfBronzeCoinsOfChest() {
-        return numberOfBronzeCoinsOfChest;
+    public int getNumberOfGoldCups() {
+        return numberOfGoldCups = new Methods().generateCups();
     }
 
-    public void setNumberOfBronzeCoinsOfChest(int numberOfBronzeCoinsOfChest) {
-        this.numberOfBronzeCoinsOfChest = numberOfBronzeCoinsOfChest;
+    public int getNumberOfSilverCups() {
+        return numberOfSilverCups = new Methods().generateCups();
     }
 
-    public int getNumberOfGoldCupsOfChest() {
-        return numberOfGoldCupsOfChest;
+    public int getNumberOfBronzeCups() {
+        return numberOfBronzeCups = new Methods().generateCups();
     }
 
-    public void setNumberOfGoldCupsOfChest(int numberOfGoldCupsOfChest) {
-        this.numberOfGoldCupsOfChest = numberOfGoldCupsOfChest;
+    public int getNumberOfAmetistPreciousStones() {
+        return numberOfAmetistPreciousStones = new Methods().generatePreciousStones();
     }
 
-    public int getNumberOfSilverCupsOfChest() {
-        return numberOfSilverCupsOfChest;
-    }
-
-    public void setNumberOfSilverCupsOfChest(int numberOfSilverCupsOfChest) {
-        this.numberOfSilverCupsOfChest = numberOfSilverCupsOfChest;
-    }
-
-    public int getNumberOfBronzeCupsOfChest() {
-        return numberOfBronzeCupsOfChest;
-    }
-
-    public void setNumberOfBronzeCupsOfChest(int numberOfBronzeCupsOfChest) {
-        this.numberOfBronzeCupsOfChest = numberOfBronzeCupsOfChest;
-    }
-
-    public int getNumberOfAmetistPreciousStonesOfChest() {
-        return numberOfAmetistPreciousStonesOfChest;
-    }
-
-    public void setNumberOfAmetistPreciousStonesOfChest(int numberOfAmetistPreciousStonesOfChest) {
-        this.numberOfAmetistPreciousStonesOfChest = numberOfAmetistPreciousStonesOfChest;
-    }
-
-    public int getNumberOfDiamondPreciousStonesOfChest() {
-        return numberOfDiamondPreciousStonesOfChest;
-    }
-
-    public void setNumberOfDiamondPreciousStonesOfChest(int numberOfDiamondPreciousStonesOfChest) {
-        this.numberOfDiamondPreciousStonesOfChest = numberOfDiamondPreciousStonesOfChest;
+    public int getNumberOfDiamondPreciousStones() {
+        return numberOfDiamondPreciousStones = new Methods().generatePreciousStones();
     }
 
     public int totalPrice()
     {
-        return this.numberOfGoldCoinsOfChest * new Treasures().priceBronzeCoins;
+        this.totalChestPrice = this.numberOfGoldCoins * new TreasuresPrice().priceGoldCoins
+                + this.numberOfSilverCoins * new TreasuresPrice().priceSilverCoins
+                + this.numberOfBronzeCoins * new TreasuresPrice().priceBronzeCoins
+                + this.numberOfGoldCups * new TreasuresPrice().priceOfGoldCup
+                + this.numberOfSilverCups * new TreasuresPrice().priceOfSilverCup
+                + this.numberOfBronzeCups * new TreasuresPrice().priceOfBronzeCup
+                + this.numberOfAmetistPreciousStones * new TreasuresPrice().priceOfAmetist
+                + this.numberOfDiamondPreciousStones * new TreasuresPrice().priceOfDiamond;
+
+        return this.totalChestPrice;
     }
 
     @Override
-    public void createBronze()
-    {
-        this.numberOfBronzeCoinsOfChest = 1;
-        this.numberOfBronzeCupsOfChest = 1;
-    }
-
-    @Override
-    public int createGold()
-    {
-        this.numberOfGoldCoinsOfChest = 1;
-        this.numberOfGoldCupsOfChest = 1;
-        return 0;
-    }
-
-    @Override
-    public int createSilver()
-    {
-        this.numberOfSilverCoinsOfChest = 1;
-        this.numberOfSilverCupsOfChest = 1;
-        return 0;
-    }
-
-    @Override
-    public int creteAmetist()
-    {
-        this.numberOfAmetistPreciousStonesOfChest = 1;
-        return 0;
-    }
-
-    @Override
-    public int createDiamond()
-    {
-        this.numberOfDiamondPreciousStonesOfChest = 1;
-        return 0;
+    public String toString() {
+        return "Chest{" +
+                "getNamberOfTheChest='" + getNamberOfTheChest + '\'' +
+                ", numberOfGoldCoins=" + numberOfGoldCoins +
+                ", numberOfSilverCoins=" + numberOfSilverCoins +
+                ", numberOfBronzeCoins=" + numberOfBronzeCoins +
+                ", numberOfGoldCups=" + numberOfGoldCups +
+                ", numberOfSilverCups=" + numberOfSilverCups +
+                ", numberOfBronzeCups=" + numberOfBronzeCups +
+                ", numberOfAmetistPreciousStones=" + numberOfAmetistPreciousStones +
+                ", numberOfDiamondPreciousStones=" + numberOfDiamondPreciousStones +
+                ", totalChestPrice=" + totalChestPrice +
+                '}';
     }
 }

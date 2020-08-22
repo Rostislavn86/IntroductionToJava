@@ -1,63 +1,42 @@
 package BasicOfOOP.OOPTask4;
 
-import BasicOfOOP.OOPTask4.TypeOfMetal.Bronze;
-import BasicOfOOP.OOPTask4.TypeOfMetal.Gold;
-import BasicOfOOP.OOPTask4.TypeOfMetal.Silver;
-
-public class Coins extends Treasures implements Gold, Silver, Bronze
+public class Coins extends Chest
 {
+    String namberBagOfCoins;
 
     int numberOfGoldCoins;
     int numberOfSilverCoins;
     int numberOfBronzeCoins;
 
-    public int getNumberOfGoldCoins()
+    int totalCoinsPrice;
+
+    public Coins(String namberBagOfCoins)
     {
-        return numberOfGoldCoins = new Methods().generateCoins();
-    }
+        this.namberBagOfCoins = namberBagOfCoins;
 
-    public void setNumberOfGoldCoins(int numberOfGoldCoins)
-    {
-        this.numberOfGoldCoins = numberOfGoldCoins;
-    }
-
-    public int getNumberOfSilverCoins() {
-        return numberOfSilverCoins = new Methods().generateCoins();
-    }
-
-    public void setNumberOfSilverCoins(int numberOfSilverCoins) {
-        this.numberOfSilverCoins = numberOfSilverCoins;
-    }
-
-    public int getNumberOfBronzeCoins()
-    {
-
-        return numberOfBronzeCoins = new Methods().generateCoins();
-    }
-
-    public void setNumberOfBronzeCoins(int numberOfBronzeCoins) {
-        this.numberOfBronzeCoins = numberOfBronzeCoins;
+        this.numberOfGoldCoins = getNumberOfGoldCoins();
+        this.numberOfSilverCoins = getNumberOfSilverCoins();
+        this.numberOfBronzeCoins = getNumberOfBronzeCoins();
     }
 
     @Override
-    public void createBronze()
+    public int totalPrice()
     {
-        this.numberOfBronzeCoins = new Methods().generateCoins();
+        this.totalCoinsPrice = this.numberOfGoldCoins * new TreasuresPrice().priceGoldCoins
+                + this.numberOfSilverCoins * new TreasuresPrice().priceSilverCoins
+                + this.numberOfBronzeCoins * new TreasuresPrice().priceBronzeCoins;
+
+        return this.totalCoinsPrice;
     }
 
     @Override
-    public int createSilver()
-    {
-        this.numberOfSilverCoins = new Methods().generateCoins();;
-        return this.numberOfBronzeCoins;
+    public String toString() {
+        return "Coins{" +
+                "namberBagOfCoins='" + namberBagOfCoins + '\'' +
+                ", numberOfGoldCoins=" + numberOfGoldCoins +
+                ", numberOfSilverCoins=" + numberOfSilverCoins +
+                ", numberOfBronzeCoins=" + numberOfBronzeCoins +
+                ", totalCoinsPrice=" + totalCoinsPrice +
+                '}';
     }
-
-    @Override
-    public int createGold()
-    {   this.numberOfGoldCoins = new Methods().generateCoins();;
-        return this.numberOfGoldCoins;
-    }
-
-
-
 }

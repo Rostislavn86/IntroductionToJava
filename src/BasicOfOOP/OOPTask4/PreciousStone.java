@@ -1,39 +1,37 @@
 package BasicOfOOP.OOPTask4;
 
-import BasicOfOOP.OOPTask4.TypeOfPreciousStone.*;
-
-public class PreciousStone extends Treasures implements Amethist,Diamond
+public class PreciousStone extends Chest
 {
+    String naberBagOgThePreciosStone;
+
     int numberOfAmetist;
     int numberOfDiamond;
 
-    public int getNumberOfAmetist() {
-        return numberOfAmetist;
-    }
+    int totalStonePrice;
 
-    public void setNumberOfAmetist(int numberOfAmetist) {
-        this.numberOfAmetist = numberOfAmetist;
-    }
+    public PreciousStone(String naberBagOgThePreciosStone)
+    {
+        this.naberBagOgThePreciosStone = naberBagOgThePreciosStone;
 
-    public int getNumberOfDiamond() {
-        return numberOfDiamond;
-    }
-
-    public void setNumberOfDiamond(int numberOfDiamond) {
-        this.numberOfDiamond = numberOfDiamond;
+        this.numberOfAmetistPreciousStones = getNumberOfAmetistPreciousStones();
+        this.numberOfDiamondPreciousStones = getNumberOfDiamondPreciousStones();
     }
 
     @Override
-    public int creteAmetist()
+    public int totalPrice()
     {
-        this.numberOfAmetist = 1;
-        return this.numberOfAmetist;
+        this.totalStonePrice = this.numberOfAmetistPreciousStones * new TreasuresPrice().priceOfAmetist
+                + this.numberOfDiamondPreciousStones * new TreasuresPrice().priceOfDiamond;
+        return this.totalStonePrice;
     }
 
     @Override
-    public int createDiamond()
-    {
-        this.numberOfDiamond = 1;
-        return this.numberOfDiamond;
+    public String toString() {
+        return "PreciousStone{" +
+                "naberBagOgThePreciosStone='" + naberBagOgThePreciosStone + '\'' +
+                ", numberOfAmetist=" + numberOfAmetist +
+                ", numberOfDiamond=" + numberOfDiamond +
+                ", totalStonePrice=" + totalStonePrice +
+                '}';
     }
 }
