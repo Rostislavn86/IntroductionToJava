@@ -1,13 +1,15 @@
-package BasicOfOOP.OOPTask4;
+package BasicOfOOP.OOPTask4.TypeOfTreasure;
+
+import BasicOfOOP.OOPTask4.TreasuresPrice;
 
 public class PreciousStone extends Chest
 {
-    String naberBagOgThePreciosStone;
+    public String naberBagOgThePreciosStone;
 
-    int numberOfAmetist;
-    int numberOfDiamond;
+    public int numberOfAmetist;
+    public int numberOfDiamond;
 
-    int totalStonePrice;
+    public int totalStonePrice;
 
     public PreciousStone(String naberBagOgThePreciosStone)
     {

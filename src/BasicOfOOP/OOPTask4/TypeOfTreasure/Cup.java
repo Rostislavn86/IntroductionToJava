@@ -1,15 +1,17 @@
-package BasicOfOOP.OOPTask4;
+package BasicOfOOP.OOPTask4.TypeOfTreasure;
 
+
+import BasicOfOOP.OOPTask4.TreasuresPrice;
 
 public class Cup extends Chest
 {
-    String numberBagOfTheCups;
+    public String numberBagOfTheCups;
 
-    int numberOfGoldCups;
-    int numberOfSilverCups;
-    int numberOfBronzeCups;
-    
-    int totalCupsPrice;
+    public int numberOfGoldCups;
+    public int numberOfSilverCups;
+    public int numberOfBronzeCups;
+
+    public int totalCupsPrice;
 
     public Cup(String numberBagOfTheCups)
     {

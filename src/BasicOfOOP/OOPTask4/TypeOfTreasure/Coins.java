@@ -1,14 +1,16 @@
-package BasicOfOOP.OOPTask4;
+package BasicOfOOP.OOPTask4.TypeOfTreasure;
+
+import BasicOfOOP.OOPTask4.TreasuresPrice;
 
 public class Coins extends Chest
 {
-    String namberBagOfCoins;
+    public String namberBagOfCoins;
 
-    int numberOfGoldCoins;
-    int numberOfSilverCoins;
-    int numberOfBronzeCoins;
+    public int numberOfGoldCoins;
+    public int numberOfSilverCoins;
+    public int numberOfBronzeCoins;
 
-    int totalCoinsPrice;
+    public int totalCoinsPrice;
 
     public Coins(String namberBagOfCoins)
     {

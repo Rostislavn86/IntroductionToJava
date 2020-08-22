@@ -1,19 +1,19 @@
 package BasicOfOOP.OOPTask4;
 
-class TreasuresPrice
+public class TreasuresPrice
 {
-    final int numberOfTreasures = 100;
+    public final int numberOfTreasures = 100;
 
-    final int priceBronzeCoins = 10;
-    final int priceSilverCoins = 20;
-    final int priceGoldCoins = 30;
+    public final int priceBronzeCoins = 10;
+    public final int priceSilverCoins = 20;
+    public final int priceGoldCoins = 30;
 
-    final int priceOfBronzeCup = 30;
-    final int priceOfSilverCup = 50;
-    final int priceOfGoldCup = 60;
+    public final int priceOfBronzeCup = 30;
+    public final int priceOfSilverCup = 50;
+    public final int priceOfGoldCup = 60;
 
-    final int priceOfAmetist = 50;
-    final  int priceOfDiamond = 100;
+    public final int priceOfAmetist = 50;
+    public final  int priceOfDiamond = 100;
 
     public int getNumberOfTreasures()
     {

@@ -6,7 +6,8 @@ package BasicOfOOP.OOPTask4;
 //дракона. Реализовать возможность просмотра сокровищ, выбора самого дорогого по стоимости сокровища и
 //выбора сокровищ на заданную сумму.
 
-import jdk.swing.interop.SwingInterOpUtils;
+import BasicOfOOP.OOPTask4.TypeOfTreasure.Chest;
+import BasicOfOOP.OOPTask4.TypeOfTreasure.Coins;
 
 public class Main
 {
@@ -29,7 +30,7 @@ public class Main
 
         System.out.println(objectsChests[0].getNamberOfTheChest);
         System.out.println(objectsChests[1].numberOfGoldCoins);
-        System.out.println(objectsChests[1].numberOfGoldCoins);
+        System.out.println(objectsChests[2].numberOfGoldCoins);
 
         System.out.println(objectsChests[0].totalPrice());
 

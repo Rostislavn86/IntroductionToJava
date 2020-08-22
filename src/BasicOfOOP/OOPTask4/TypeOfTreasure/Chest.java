@@ -1,23 +1,24 @@
-package BasicOfOOP.OOPTask4;
+package BasicOfOOP.OOPTask4.TypeOfTreasure;
 
-import java.awt.font.TextHitInfo;
+import BasicOfOOP.OOPTask4.Methods;
+import BasicOfOOP.OOPTask4.TreasuresPrice;
 
 public class Chest
 {
     public String getNamberOfTheChest;
 
-    int numberOfGoldCoins;
-    int numberOfSilverCoins;
-    int numberOfBronzeCoins;
+    public int numberOfGoldCoins;
+    public int numberOfSilverCoins;
+    public int numberOfBronzeCoins;
 
-    int numberOfGoldCups;
-    int numberOfSilverCups;
-    int numberOfBronzeCups;
+    public int numberOfGoldCups;
+    public int numberOfSilverCups;
+    public int numberOfBronzeCups;
 
-    int numberOfAmetistPreciousStones;
-    int numberOfDiamondPreciousStones;
+    public int numberOfAmetistPreciousStones;
+    public int numberOfDiamondPreciousStones;
 
-    int totalChestPrice;
+    public int totalChestPrice;
 
     public Chest(String name)
     {
