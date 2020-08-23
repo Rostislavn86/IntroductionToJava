@@ -14,11 +14,18 @@ public class Coins extends Chest
 
     public Coins(String namberBagOfCoins)
     {
-        this.namberBagOfCoins = namberBagOfCoins;
+        this.namberBagOfCoins = "Мешок монет номер " + namberBagOfCoins;
 
         this.numberOfGoldCoins = getNumberOfGoldCoins();
         this.numberOfSilverCoins = getNumberOfSilverCoins();
         this.numberOfBronzeCoins = getNumberOfBronzeCoins();
+
+        this.totalCoinsPrice = totalPrice();
+    }
+
+    public String getNamberBagOfCoins()
+    {
+        return namberBagOfCoins;
     }
 
     @Override
@@ -31,14 +38,4 @@ public class Coins extends Chest
         return this.totalCoinsPrice;
     }
 
-    @Override
-    public String toString() {
-        return "Coins{" +
-                "namberBagOfCoins='" + namberBagOfCoins + '\'' +
-                ", numberOfGoldCoins=" + numberOfGoldCoins +
-                ", numberOfSilverCoins=" + numberOfSilverCoins +
-                ", numberOfBronzeCoins=" + numberOfBronzeCoins +
-                ", totalCoinsPrice=" + totalCoinsPrice +
-                '}';
-    }
 }

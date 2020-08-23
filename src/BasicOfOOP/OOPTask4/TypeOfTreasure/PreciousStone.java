@@ -13,10 +13,13 @@ public class PreciousStone extends Chest
 
     public PreciousStone(String naberBagOgThePreciosStone)
     {
-        this.naberBagOgThePreciosStone = naberBagOgThePreciosStone;
 
-        this.numberOfAmetistPreciousStones = getNumberOfAmetistPreciousStones();
-        this.numberOfDiamondPreciousStones = getNumberOfDiamondPreciousStones();
+        this.naberBagOgThePreciosStone = "Мешок драгоценных камней номер " + naberBagOgThePreciosStone;
+
+        this.numberOfAmetist = getNumberOfAmetistPreciousStones();
+        this.numberOfDiamond = getNumberOfDiamondPreciousStones();
+
+        this.totalStonePrice = totalPrice();
     }
 
     @Override
@@ -27,13 +30,4 @@ public class PreciousStone extends Chest
         return this.totalStonePrice;
     }
 
-    @Override
-    public String toString() {
-        return "PreciousStone{" +
-                "naberBagOgThePreciosStone='" + naberBagOgThePreciosStone + '\'' +
-                ", numberOfAmetist=" + numberOfAmetist +
-                ", numberOfDiamond=" + numberOfDiamond +
-                ", totalStonePrice=" + totalStonePrice +
-                '}';
-    }
 }

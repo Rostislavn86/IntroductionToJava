@@ -1,6 +1,6 @@
 package BasicOfOOP.OOPTask4;
 
-public class Methods
+public class MethodsGenerateTreasures
 {
 
     public int generateCoins()

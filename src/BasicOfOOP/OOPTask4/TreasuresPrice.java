@@ -13,7 +13,7 @@ public class TreasuresPrice
     public final int priceOfGoldCup = 60;
 
     public final int priceOfAmetist = 50;
-    public final  int priceOfDiamond = 100;
+    public final  int priceOfDiamond = 1000;
 
     public int getNumberOfTreasures()
     {

@@ -1,6 +1,5 @@
 package BasicOfOOP.OOPTask4.TypeOfTreasure;
 
-
 import BasicOfOOP.OOPTask4.TreasuresPrice;
 
 public class Cup extends Chest
@@ -15,11 +14,13 @@ public class Cup extends Chest
 
     public Cup(String numberBagOfTheCups)
     {
-        this.numberBagOfTheCups = numberBagOfTheCups;
+        this.numberBagOfTheCups = "Мешок кубков номер " + numberBagOfTheCups;
 
         this.numberOfGoldCups = getNumberOfGoldCups();
         this.numberOfSilverCups = getNumberOfSilverCups();
         this.numberOfBronzeCups = getNumberOfBronzeCups();
+
+        this.totalCupsPrice = totalPrice();
     }
 
     @Override
@@ -31,14 +32,4 @@ public class Cup extends Chest
         return this.totalCupsPrice;
     }
 
-    @Override
-    public String toString() {
-        return "Cup{" +
-                "numberBagOfTheCups='" + numberBagOfTheCups + '\'' +
-                ", numberOfGoldCups=" + numberOfGoldCups +
-                ", numberOfSilverCups=" + numberOfSilverCups +
-                ", numberOfBronzeCups=" + numberOfBronzeCups +
-                ", totalCupsPrice=" + totalCupsPrice +
-                '}';
-    }
 }

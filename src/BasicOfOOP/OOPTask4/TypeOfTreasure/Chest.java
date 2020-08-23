@@ -1,6 +1,6 @@
 package BasicOfOOP.OOPTask4.TypeOfTreasure;
 
-import BasicOfOOP.OOPTask4.Methods;
+import BasicOfOOP.OOPTask4.MethodsGenerateTreasures;
 import BasicOfOOP.OOPTask4.TreasuresPrice;
 
 public class Chest
@@ -34,6 +34,8 @@ public class Chest
 
         this.numberOfAmetistPreciousStones = getNumberOfAmetistPreciousStones();
         this.numberOfDiamondPreciousStones = getNumberOfDiamondPreciousStones();
+
+        this.totalChestPrice = totalPrice();
     }
 
     public Chest()
@@ -41,43 +43,42 @@ public class Chest
 
     }
 
-    public String getNamberOfTheChest()
+    public String getGetNamberOfTheChest()
     {
-        int count = 0;
         return getNamberOfTheChest;
     }
 
     public int getNumberOfGoldCoins()
     {
-        return numberOfGoldCoins = new Methods().generateCoins();
+        return numberOfGoldCoins = new MethodsGenerateTreasures().generateCoins();
     }
 
     public int getNumberOfSilverCoins() {
-        return numberOfSilverCoins = new Methods().generateCoins();
+        return numberOfSilverCoins = new MethodsGenerateTreasures().generateCoins();
     }
 
     public int getNumberOfBronzeCoins() {
-        return numberOfBronzeCoins = new Methods().generateCoins();
+        return numberOfBronzeCoins = new MethodsGenerateTreasures().generateCoins();
     }
 
     public int getNumberOfGoldCups() {
-        return numberOfGoldCups = new Methods().generateCups();
+        return numberOfGoldCups = new MethodsGenerateTreasures().generateCups();
     }
 
     public int getNumberOfSilverCups() {
-        return numberOfSilverCups = new Methods().generateCups();
+        return numberOfSilverCups = new MethodsGenerateTreasures().generateCups();
     }
 
     public int getNumberOfBronzeCups() {
-        return numberOfBronzeCups = new Methods().generateCups();
+        return numberOfBronzeCups = new MethodsGenerateTreasures().generateCups();
     }
 
     public int getNumberOfAmetistPreciousStones() {
-        return numberOfAmetistPreciousStones = new Methods().generatePreciousStones();
+        return numberOfAmetistPreciousStones = new MethodsGenerateTreasures().generatePreciousStones();
     }
 
     public int getNumberOfDiamondPreciousStones() {
-        return numberOfDiamondPreciousStones = new Methods().generatePreciousStones();
+        return numberOfDiamondPreciousStones = new MethodsGenerateTreasures().generatePreciousStones();
     }
 
     public int totalPrice()
@@ -94,19 +95,4 @@ public class Chest
         return this.totalChestPrice;
     }
 
-    @Override
-    public String toString() {
-        return "Chest{" +
-                "getNamberOfTheChest='" + getNamberOfTheChest + '\'' +
-                ", numberOfGoldCoins=" + numberOfGoldCoins +
-                ", numberOfSilverCoins=" + numberOfSilverCoins +
-                ", numberOfBronzeCoins=" + numberOfBronzeCoins +
-                ", numberOfGoldCups=" + numberOfGoldCups +
-                ", numberOfSilverCups=" + numberOfSilverCups +
-                ", numberOfBronzeCups=" + numberOfBronzeCups +
-                ", numberOfAmetistPreciousStones=" + numberOfAmetistPreciousStones +
-                ", numberOfDiamondPreciousStones=" + numberOfDiamondPreciousStones +
-                ", totalChestPrice=" + totalChestPrice +
-                '}';
-    }
 }
