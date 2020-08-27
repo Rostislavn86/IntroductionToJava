@@ -15,5 +15,8 @@ public class FileUser extends Directory
 
     public void setFileName(String fileName) {
         this.fileName = fileName;
+
     }
 }
+
+
