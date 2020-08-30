@@ -1,4 +1,4 @@
-package AbstractClassExample;
+package Lessons.AbstractClassExample;
 
 public class Program{
 

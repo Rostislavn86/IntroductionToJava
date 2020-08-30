@@ -7,6 +7,6 @@ public class Main
 {
     public static void main(String[] args)
     {
-    Celendar celendar = new Celendar();
+    Celendar celendar = new Celendar("Декабрь");
     }
 }
