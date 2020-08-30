@@ -6,41 +6,34 @@ import BasicOfOOP.Task5.Flowers.*;
 public class FlowerFactory
 {
 
-    String flowerName;
-    static String[] allFlowers = new String[5];
+    static String[] allFlowers = {"flower","flower","flower","flower","flower"};
 
     public CreateFlower createFlower(String flower)
     {
-
         {
             if (flower.equalsIgnoreCase("Роза"))
             {
-                this.flowerName = flower;
-                allFlowers[0] = flower;
+                allFlowers[0] = new Rose().getFlowerName();
                 return new Rose();
             }
             if (flower.equalsIgnoreCase("Крокус"))
             {
-                this.flowerName = flower;
-                allFlowers[1] = flower;
+                allFlowers[1] = new Crocus().getFlowerName();
                 return new Crocus();
             }
             if (flower.equalsIgnoreCase("Георгин"))
             {
-                this.flowerName = flower;
-                allFlowers[2] = flower;
+                allFlowers[2] = new Dahlia().getFlowerName();
                 return new Dahlia();
             }
             if (flower.equalsIgnoreCase("Тысячелистник"))
             {
-                this.flowerName = flower;
-                allFlowers[3] = flower;
+                allFlowers[3] = new Milfoil().getFlowerName();
                 return new Milfoil();
             }
             if (flower.equalsIgnoreCase("Подснежник"))
             {
-                this.flowerName = flower;
-                allFlowers[4] = flower;
+                allFlowers[4] = new Snowdrop().getFlowerName();
                 return new Snowdrop();
             }
             else
@@ -50,15 +43,9 @@ public class FlowerFactory
         }
     }
 
-    public static String[] getAllFlowers() {
+    public static String[] getAllFlowers()
+    {
         return allFlowers;
-    }
-
-    @Override
-    public String toString() {
-        return "FlowerFactory{" +
-                "flowerName='" + flowerName + '\'' +
-                '}';
     }
 
 }

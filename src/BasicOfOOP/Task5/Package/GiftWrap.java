@@ -5,7 +5,8 @@ import BasicOfOOP.Task5.CreatePaсkage;
 public class GiftWrap implements CreatePaсkage
 {
     @Override
-    public String getPackageName() {
+    public String getPackageName()
+    {
         return "Подарочная упаковка";
     }
 }

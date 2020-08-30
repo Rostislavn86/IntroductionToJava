@@ -9,17 +9,6 @@ public class Celendar
 
     WeekendsAndHolydays weekendsAndHolydaysJan = new WeekendsAndHolydays("Январь",new int[]{12,13,25},new int[]{28,29});
     WeekendsAndHolydays weekendsAndHolydaysFeb = new WeekendsAndHolydays("Февраль",new int[]{13,23},new int[]{3});
-//    WeekendsAndHolydays weekendsAndHolydaysMarch = new WeekendsAndHolydays();
-//    WeekendsAndHolydays weekendsAndHolydaysApr = new WeekendsAndHolydays();
-//    WeekendsAndHolydays weekendsAndHolydaysMay = new WeekendsAndHolydays();
-//    WeekendsAndHolydays weekendsAndHolydaysJune = new WeekendsAndHolydays();
-//    WeekendsAndHolydays weekendsAndHolydaysJulay = new WeekendsAndHolydays();
-//    WeekendsAndHolydays weekendsAndHolydaysAugust = new WeekendsAndHolydays();
-//    WeekendsAndHolydays weekendsAndHolydaysSent = new WeekendsAndHolydays();
-//    WeekendsAndHolydays weekendsAndHolydaysOkt = new WeekendsAndHolydays();
-//    WeekendsAndHolydays weekendsAndHolydaysNov = new WeekendsAndHolydays();
-//    WeekendsAndHolydays weekendsAndHolydaysDec = new WeekendsAndHolydays();
-
 
     public Celendar()
     {

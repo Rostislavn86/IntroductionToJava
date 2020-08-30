@@ -15,7 +15,6 @@ package BasicOfOOP.Task5;
 import BasicOfOOP.Task5.Fabrics.FlowerFactory;
 import BasicOfOOP.Task5.Fabrics.PackageFactory;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main
@@ -26,9 +25,20 @@ public class Main
         System.out.println("Добрый день, добро пожаловать в приложение по состовлению букетов, " +
                 "для того что бы добавить цветок в букет введите название из списка : ");
         menuFlowers();
-        System.out.println("Для того что бы добавить упаковку ввеите её название : ");
+        System.out.println("Для того что бы добавить упаковку введите её название : ");
+        menuPackage();
 
+        System.out.println("Выбранная вами цветочная композиция состоит из следующих цветов : ");
 
+        for(int i = 0; i < FlowerFactory.getAllFlowers().length; i ++)
+        {
+            if (FlowerFactory.getAllFlowers()[i].equals("flower")) continue;
+            System.out.println(FlowerFactory.getAllFlowers()[i]);
+        }
+
+        System.out.println("Упаковка : ");
+
+        System.out.println(PackageFactory.getPackageName());
     }
 
     public static void menuFlowers()
@@ -56,7 +66,6 @@ public class Main
         if (y.equals("y"))
             menuFlowers();
 
-        System.out.println(Arrays.toString(FlowerFactory.getAllFlowers()));
     }
 
     public static void menuPackage()
@@ -69,6 +78,19 @@ public class Main
         Scanner sc = new Scanner(System.in);
         String ch = sc.nextLine();
 
+        if (pk.createPaсkage(ch) == null)
+        {
+            System.out.println("Название упаковки которую вы ввели нет в списке, пожалуйста повторите ввод : ");
+            menuPackage();
+        }
+        else pk.createPaсkage(ch);
+
+        System.out.println("Для того что бы изменить упаковку коробку введите 'y'");
+
+        String y = sc.nextLine();
+
+        if (y.equals("y"))
+            menuPackage();
 
     }
 }
