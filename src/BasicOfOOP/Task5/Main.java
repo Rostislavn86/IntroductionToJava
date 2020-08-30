@@ -43,7 +43,6 @@ public class Main
 
     public static void menuFlowers()
     {
-
         System.out.println("Списко досупных цветов : ");
         System.out.println("Крокус ,Георгин ,Тысячелистник ,Роза ,Подснежник");
 
