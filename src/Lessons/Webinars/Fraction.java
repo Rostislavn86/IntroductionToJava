@@ -1,4 +1,4 @@
-package Webinars;
+package Lessons.Webinars;
 
 public class Fraction
 {

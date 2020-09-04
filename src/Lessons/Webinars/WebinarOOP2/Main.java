@@ -1,4 +1,4 @@
-package Webinars.WebinarOOP2;
+package Lessons.Webinars.WebinarOOP2;
 
 public class Main {
     public static void main(String[] args) {

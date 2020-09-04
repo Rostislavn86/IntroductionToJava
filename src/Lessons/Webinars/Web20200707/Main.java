@@ -1,4 +1,4 @@
-package Webinars.Web20200707;
+package Lessons.Webinars.Web20200707;
 
 //https://www.youtube.com/watch?v=8hSlpiR0Eiw
 

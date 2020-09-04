@@ -8,9 +8,11 @@ public class Program{
         sam.display();
         Client bob = new Client("Bob", "Leman Brothers");
         bob.display();
+
     }
 }
-abstract class Person {
+abstract class Person
+{
 
     private String name;
 
@@ -22,6 +24,11 @@ abstract class Person {
     }
 
     public abstract void display();
+
+    public void one()
+    {
+        System.out.println("Abstract");
+    }
 }
 
 class Employee extends Person{
@@ -36,7 +43,7 @@ class Employee extends Person{
 
     public void display(){
 
-        System.out.printf("Employee Name: %s \t Bank: %s \n", super.getName(), bank);
+        System.out.printf("Employee.java Name: %s \t Bank: %s \n", super.getName(), bank);
     }
 }
 

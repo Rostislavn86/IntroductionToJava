@@ -1,4 +1,4 @@
-package Webinars.Web20200707;
+package Lessons.Webinars.Web20200707;
 
 public class ProgrammerBook extends Book
 {

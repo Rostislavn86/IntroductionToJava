@@ -1,4 +1,4 @@
-package Webinars.WebinarOOP5;
+package Lessons.Webinars.WebinarOOP5;
 
 public class Main
 {

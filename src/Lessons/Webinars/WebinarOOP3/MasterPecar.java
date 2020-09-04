@@ -1,4 +1,4 @@
-package Webinars.WebinarOOP3;
+package Lessons.Webinars.WebinarOOP3;
 
 public class MasterPecar extends Pecar
 {
