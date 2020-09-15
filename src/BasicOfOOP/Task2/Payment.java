@@ -95,14 +95,6 @@ public class Payment
             this.priceOfProduct = priceOfProduct;
         }
 
-//        @Override
-//        public String toString() {
-//            return "Product{" +
-//                    "nameOfTheProduct='" + nameOfTheProduct + '\'' +
-//                    ", countOfTheProduct=" + countOfTheProduct +
-//                    ", priceOfProduct=" + priceOfProduct +
-//                    '}';
-//        }
     }
 
 }
