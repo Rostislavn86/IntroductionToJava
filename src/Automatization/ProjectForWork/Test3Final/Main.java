@@ -10,7 +10,7 @@ public class Main
 {
     public static void main(String args[]) throws IOException {
         //Loading an existing document
-        File file = new File("D://Tovar.pdf");
+        File file = new File("D://Tovar2.pdf");
         PDDocument document = PDDocument.load(file);
         //Instantiate PDFTextStripper class
         PDFTextStripper pdfStripper = new PDFTextStripper();
