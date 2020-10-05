@@ -13,6 +13,10 @@ public class Program{
 }
 abstract class Person
 {
+    {
+        System.out.println("Abstract Class Call");
+    }
+
 
     private String name;
 

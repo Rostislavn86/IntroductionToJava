@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 public class Main {
     public static void main(String[] args) throws IOException
     {
-        String contents = new String(Files.readAllBytes(Paths.get("D:\\Epam_Task\\Introduction to Java\\src\\StringsAndBasicsOfTextProcessing\\WorkingWithRegularExpressionsPatternMatcher\\Task1\\text.txt")));
+        String contents = new String(Files.readAllBytes(Paths.get("D:\\Epam_Task\\IntroductionToJava\\src\\StringsAndBasicsOfTextProcessing\\WorkingWithRegularExpressionsPatternMatcher\\Task1\\text.txt")));
 
         chooseVivod(contents);
 

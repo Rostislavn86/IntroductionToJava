@@ -1,4 +1,4 @@
-package BoobleSortExample;
+package Lessons.BoobleSortExample;
 
 
 import java.util.Arrays;

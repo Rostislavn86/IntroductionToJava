@@ -10,6 +10,11 @@ public class Program{
 }
 interface Printable{
 
+
+
+    int n = 5;
+
+
     void print();
 }
 class Book implements Printable{
@@ -23,8 +28,10 @@ class Book implements Printable{
         this.author = author;
     }
 
+
     public void print() {
 
-        System.out.printf("%s (%s) \n", name, author);
+        int x = n;
+        System.out.printf("%s (%s) \n", name, author + " " + x);
     }
 }
