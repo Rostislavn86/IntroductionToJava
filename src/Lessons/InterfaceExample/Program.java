@@ -6,6 +6,7 @@ public class Program{
 
         Book b1 = new Book("Java. Complete Referense.", "H. Shildt");
         b1.print();
+        b1.prov();
     }
 }
 interface Printable{
@@ -13,6 +14,11 @@ interface Printable{
 
 
     int n = 5;
+
+    default void prov()
+    {
+        System.out.println("sdasd");
+    }
 
 
     void print();
